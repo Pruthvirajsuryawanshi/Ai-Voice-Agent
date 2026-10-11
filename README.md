@@ -33,7 +33,7 @@ Detailed transcripts and notes are in [`docs/test-evidence.md`](docs/test-eviden
 
 | Assignment Test ID | Scenario | Recording | Transcript / review | Result |
 |---|---|---|---|---|
-| TC-01 | Fully eligible customer | [Recording](https://api.bolna.ai/recordings/call/e41ae2e7-99de-434e-94da-ab3954645716) | [Transcript and review](docs/test-evidence.md#tc-01-transcript) | **FAIL** — the agent treated “Hello” as identity confirmation and asked about accepting the ₹75 lakh cap after a ₹50 lakh request. |
+| TC-01 | Fully eligible customer | [Recording](https://api.bolna.ai/recordings/call/c507da24-4fc2-4e88-aff3-2d5846c4e5ee) | [Transcript and review](docs/test-evidence.md#tc-01-transcript) | **PASS** — identity confirmed, all 7 checklist items collected, STT noise handled cleanly, and qualified handoff. |
 | TC-02 | Agricultural property | [Recording](https://api.bolna.ai/recordings/call/2af6811d-778d-46e5-9a19-6bbafb4d9db1) | [Transcript and review](docs/test-evidence.md#tc-02-transcript) | **PASS** |
 | TC-03 | Cash income | [Recording](https://api.bolna.ai/recordings/call/42166302-55da-4de1-9f11-65c2b8bf02d9) | [Transcript and review](docs/test-evidence.md#tc-03-transcript) | **PASS** |
 | TC-07 | Amount above ₹75 lakh | [Recording](https://api.bolna.ai/recordings/call/3342066e-f151-4f01-b897-38fe3cc48592) | [Transcript and review](docs/test-evidence.md#tc-07-transcript) | **NEEDS REVIEW** — confirm the customer's acceptance from audio because the transcript says “seventy five rupees.” |

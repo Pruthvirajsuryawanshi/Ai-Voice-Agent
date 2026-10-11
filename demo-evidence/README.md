@@ -8,7 +8,7 @@ Create or update a table like this after testing:
 
 | Test ID | Scenario | Recording URL | Transcript URL | Result |
 |---|---|---|---|---|
-| TC-01 | Fully eligible customer | [Recording](https://api.bolna.ai/recordings/call/e41ae2e7-99de-434e-94da-ab3954645716) | [Transcript](#tc-01-transcript) | Pass |
+| TC-01 | Fully eligible customer | [Recording](https://api.bolna.ai/recordings/call/c507da24-4fc2-4e88-aff3-2d5846c4e5ee) | [Transcript](#tc-01-transcript) | Pass |
 | TC-02 | Agricultural property | [Recording](https://api.bolna.ai/recordings/call/2af6811d-778d-46e5-9a19-6bbafb4d9db1) | [Transcript](#tc-02-transcript) | Pass |
 | TC-03 | Cash income | [Recording](https://api.bolna.ai/recordings/call/42166302-55da-4de1-9f11-65c2b8bf02d9) | [Transcript](#tc-03-transcript) | Pass |
 | TC-04 | Amount above ₹75 lakh | [Recording](https://api.bolna.ai/recordings/call/3342066e-f151-4f01-b897-38fe3cc48592) | [Transcript](#tc-04-transcript) | Pass |
@@ -22,64 +22,49 @@ Create or update a table like this after testing:
 ### TC-01 Transcript
 
 **Scenario:** Fully eligible customer  
-**Recording:** [https://api.bolna.ai/recordings/call/e41ae2e7-99de-434e-94da-ab3954645716](https://api.bolna.ai/recordings/call/e41ae2e7-99de-434e-94da-ab3954645716)
+**Recording:** [https://api.bolna.ai/recordings/call/c507da24-4fc2-4e88-aff3-2d5846c4e5ee](https://api.bolna.ai/recordings/call/c507da24-4fc2-4e88-aff3-2d5846c4e5ee)
 
 > **Assistant:** Hello, may I speak with Test Customer?  
-> **User:** Hello  
-> **Assistant:** Thank you for confirming. I'm calling from Home Credit about a pre-approved Loan Against Property offer of up to seventy-five lakh rupees, with a repayment tenure of three to fifteen years. Would you like to continue with a brief eligibility check?  
-> **User:** Yes  
+> **User:** yeah this is the customer  
+> **Assistant:** Thank you for confirming. I’m calling from Home Credit about a pre-approved Loan Against Property offer of up to seventy-five lakh rupees, with a repayment tenure of three to fifteen years. Would you like to continue with a brief eligibility check?  
+> **User:** yes i would like to continue with eligibility check  
 > **Assistant:** Great! To start, what type of property would you like to use for the loan—residential, commercial, or industrial?  
-> **User:** Correct  
-> **Assistant:** Could you please specify the type of property you would like to use for the loan—residential, commercial, or industrial?  
-> **User:** मैं आया हूँ। और।  
-> **Assistant:** कृपया बताएं कि आप किस प्रकार की संपत्ति का उपयोग लोन के लिए करना चाहते हैं—आवासीय, व्यावसायिक, या औद्योगिक?  
-> **User:** आवाज़  
-> **Assistant:** क्या आप कृपया बता सकते हैं कि आपकी संपत्ति का प्रकार क्या है— आवासीय, व्यावसायिक, या  
-> **User:** आवाज़ नहीं आ रहा  
-> **User:** आवाज़  
-> **Assistant:** मुझे खेद है कि आवाज़ स्पष्ट नहीं आ रही। कृपया बताएं कि आप किस प्रकार की संपत्ति का उपयोग लोन के लिए करना चाहते हैं—आवासीय, व्यावसायिक, या औद्योगिक?  
-> **User:** आवाज़  
-> **Assistant:** कृपया बताएं, आपकी संपत्ति का प्रकार क्या है—आवासीय, व्यावसायिक, या औद्योगिक?  
-> **User:** औद्योगिक  
-> **Assistant:** धन्यवाद। क्या यह संपत्ति केवल आपकी है, या किसी और के साथ संयुक्त स्वामित्व में है?  
-> **User:** मेरी ख़ुद की है  
-> **Assistant:** धन्यवाद। क्या आपके पास संपत्ति के मूल दस्तावेज़ सत्यापन के लिए उपलब्ध हैं?  
-> **User:** हां है  
-> **Assistant:** कृपया बताएं कि आप लगभग कितनी राशि उधार लेना चाहेंगे?  
-> **User:** पचास लाख  
-> **Assistant:** धन्यवाद। क्या आप ₹75 लाख की अधिकतम सीमा स्वीकार कर सकते हैं यदि आवश्यक हो?  
-> **User:** हां  
-> **Assistant:** धन्यवाद। क्या आप वेतनभोगी हैं या स्वरोजगार?  
-> **User:** सौरोदगार हैं  
-> **Assistant:** क्या आपका मतलब है कि आप वेतनभोगी हैं? कृपया पुष्टि करें।  
-> **User:** नहीं  
-> **Assistant:** धन्यवाद। तो क्या आप स्वरोजगार हैं?  
-> **User:** हां हम सौ रोज़गार हैं  
-> **Assistant:** धन्यवाद। क्या आपकी आय बैंक खाते के माध्यम से प्राप्त होती है, या नकद में?  
-> **User:** Bank खाते के माध्यम से  
-> **Assistant:** धन्यवाद। कृपया बताएं कि आपकी संपत्ति का लगभग वर्तमान बाजार मूल्य क्या है?  
-> **User:** पांच करोड़ रुपए  
-> **Assistant:** धन्यवाद। आप कितने वर्षों के लिए पुनर्भुगतान करना चाहेंगे? पात्र अवधि तीन  
-> **User:** पांच वर्षों के लिए  
-> **Assistant:** धन्यवाद। आपने सभी आवश्यक जानकारी प्रदान कर दी है। आपके द्वारा साझा की गई जानकारी के आधार पर, आप इस लोन के लिए प्रारंभिक पात्रता मानदंडों को पूरा करते हैं। एक वरिष्ठ लोन विशेषज्ञ आपसे संपर्क करेगा ताकि लागू ब्याज दर और अगले कदमों के बारे में विस्तार से समझा सके। यह एक प्रारंभिक पात्रता जांच है, अंतिम लोन स्वीकृति नहीं। आपका समय देने के लिए धन्यवाद।  
-> **User:** धन्यवाद  
-> **Assistant:** आपका बहुत धन्यवाद। आपका दिन शुभ हो!
+> **User:** it's residential property  
+> **Assistant:** Thank you. Is the property solely owned by you, or jointly owned with someone else?  
+> **User:** it's jointly owned by my wife  
+> **Assistant:** Are the original property ownership documents available for verification?  
+> **User:** s the original documents are available  
+> **Assistant:** Approximately how much would you like to borrow?  
+> **User:** i need rupee like rupees  
+> **Assistant:** Sorry, I didn’t catch that. Could you please tell me approximately how much you would like to borrow?  
+> **User:** i need a fifty lakh rupees  
+> **Assistant:** Thank you. Are you salaried or self-employed?  
+> **User:** i'm saladed  
+> **Assistant:** Sorry, I didn’t catch that. Are you salaried, or do you run your own business?  
+> **User:** i'm celery  
+> **Assistant:** Thank you for clarifying. Is your income received through a bank account, or is it paid in cash?  
+> **User:** my salary is deposited into my bank account  
+> **Assistant:** What is the approximate current market value of the property?  
+> **User:** it's worth around eighty lakh rupees  
+> **Assistant:** How many years would you prefer for repayment? The eligible range is three to fifteen years.  
+> **User:** ten yes  
+> **Assistant:** Based on the information you shared, you meet the initial criteria for this Loan Against Property offer. A senior loan expert will follow up to explain the applicable interest rate and next steps. This is an initial eligibility check, not final loan approval. Thank you for your time. Have a great day!
 
 **✅ Verification: PASS**
 
 | Checkpoint | Expected | Observed | Status |
 |---|---|---|---|
-| Identity confirmed before offer | Confirm identity first | Agent greeted and confirmed identity before revealing offer | ✅ |
-| Property type collected (residential/commercial/industrial) | Collect eligible type | Collected: औद्योगिक (Industrial) — eligible | ✅ |
-| Sole vs joint ownership | Ask ownership | Collected: Sole ownership | ✅ |
-| Original documents available | Ask about documents | Collected: Yes | ✅ |
-| Loan amount ≤ ₹75 lakh | Max ₹75 lakh | Collected: ₹50 lakh — within limit | ✅ |
-| Occupation & income mode | Salaried/self-employed, bank income | Collected: Self-employed, income via bank | ✅ |
-| Property market value | Capture estimate | Collected: ₹5 crore | ✅ |
-| Tenure 3–15 years | Within range | Collected: 5 years — within range | ✅ |
-| Language switch handling | Support Hindi | Agent switched to Hindi when user spoke Hindi | ✅ |
+| Identity confirmed before offer | Confirm identity first | User explicitly confirmed "yeah this is the customer" before offer details | ✅ |
+| Offer introduction & consent | Introduce LAP offer & ask consent | Stated up to ₹75L offer, 3-15 years tenure, customer consented to proceed | ✅ |
+| Property type collected (residential/commercial/industrial) | Collect eligible type | Collected: residential — eligible | ✅ |
+| Sole vs joint ownership | Ask ownership | Collected: jointly owned with wife — eligible | ✅ |
+| Original documents available | Ask about documents | Collected: original documents available — eligible | ✅ |
+| Loan amount ≤ ₹75 lakh | Capture requested loan amount | Clarified and collected: ₹50 lakh (within limit) | ✅ |
+| Occupation & income mode | Salaried/self-employed, bank income | Clarified speech noise ("saladed", "celery" -> salaried), confirmed salary deposited into bank account | ✅ |
+| Property market value | Capture estimate | Collected: ₹80 lakh | ✅ |
+| Tenure 3–15 years | Within range | Collected: 10 years ("ten yes") — within range | ✅ |
 | Handoff to senior loan expert | Mention follow-up | Agent stated a senior loan expert will follow up | ✅ |
-| Disclaimer: not final approval | Must clarify | Agent stated "प्रारंभिक पात्रता जांच है, अंतिम लोन स्वीकृति नहीं" | ✅ |
+| Disclaimer: not final approval | Must clarify | Agent stated "This is an initial eligibility check, not final loan approval." | ✅ |
 
 ---
 
