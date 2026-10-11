@@ -11,6 +11,7 @@ This document records the observed behavior from Bolna test calls. The results a
 | TC-05 | Tenure below 3 years | [Recording](https://api.bolna.ai/recordings/call/ab049189-e53e-427d-b3ad-8646a08200e0) | [Transcript](#tc-05-transcript) | **PASS** |
 | TC-06 | Tenure above 15 years | [Recording](https://api.bolna.ai/recordings/call/76beb574-1d2b-4448-9694-261cb90f852b) | [Transcript](#tc-06-transcript) | **PASS** |
 | TC-07 | Amount above ₹75 lakh | [Recording](https://api.bolna.ai/recordings/call/3342066e-f151-4f01-b897-38fe3cc48592) | [Transcript](#tc-07-transcript) | **PASS** |
+| TC-08 | Amount above limit & customer declines | [Recording](https://api.bolna.ai/recordings/call/97fd70e0-ceb4-48c9-9253-243f68ad15bf) | [Transcript](#tc-08-transcript) | **PASS** |
 | TC-09 | Joint ownership | [Same recording as TC-01](https://api.bolna.ai/recordings/call/c507da24-4fc2-4e88-aff3-2d5846c4e5ee) | [Transcript evidence](#tc-01-transcript) | **PASS** |
 | TC-10 | Existing property loan | [Recording](https://api.bolna.ai/recordings/call/10350bed-c5fc-4005-bd4a-eeeef7fcde00) | [Transcript](#tc-10-transcript) | **PASS** |
 | TC-11 | EMI reduction request | [Same recording as TC-10](https://api.bolna.ai/recordings/call/10350bed-c5fc-4005-bd4a-eeeef7fcde00) | [Transcript evidence](#tc-10-transcript) | **PASS** |
@@ -484,6 +485,61 @@ This document records the observed behavior from Bolna test calls. The results a
 | Unclear speech handling | Re-ask politely | Agent re-asked when input was unclear ("an accident", "calorator") | ✅ |
 | Handoff to senior loan expert | Mention follow-up | Agent stated a senior loan expert will follow up | ✅ |
 | Disclaimer: not final approval | Must clarify | Agent stated "This is an initial eligibility check, not final loan approval" | ✅ |
+
+---
+
+### TC-08 Transcript
+
+**Scenario:** Requested amount above limit; customer declines alternative
+
+**Recording:** [https://api.bolna.ai/recordings/call/97fd70e0-ceb4-48c9-9253-243f68ad15bf](https://api.bolna.ai/recordings/call/97fd70e0-ceb4-48c9-9253-243f68ad15bf)
+
+> **Assistant:** Hello, may I speak with Test Customer?
+
+> **User:** yes
+
+> **User:** i'm the customer
+
+> **Assistant:** Thank you for confirming. I’m calling from Home Credit about a pre-approved Loan Against Property offer of up to seventy-five lakh rupees, with a repayment tenure of three to fifteen years. Would you like to continue with a brief eligibility check?
+
+> **User:** yes i would like to continue
+
+> **Assistant:** Great! What type of property would you like to use for the loan— residential, commercial, or
+
+> **User:** it's residential property
+
+> **Assistant:** Thank you. Is the property solely owned by you, or jointly owned with
+
+> **User:** yes it's only on by me
+
+> **Assistant:** Thank you for sharing that. Are the original property ownership documents available for verification?
+
+> **User:** yes i have the original documents available
+
+> **Assistant:** Approximately how much would you like to borrow?
+
+> **User:** i need nine deluxe rupees
+
+> **Assistant:** Sorry, I didn’t catch that clearly. Could you please tell me approximately how much you would like to borrow?
+
+> **User:** i need ninety lakh rupees
+
+> **Assistant:** The maximum loan amount available in this offer is seventy-five lakh rupees. Would you like to proceed with the loan amount of seventy-five lakh rupees?
+
+> **User:** no i need the full ninety lakh i don't want to proceed with the seventy five lakh
+
+> **Assistant:** Understood. The offer is limited to seventy- five lakh rupees, so I will not continue the eligibility check. Thank you for your time.
+
+**✅ Verification: PASS**
+
+| Checkpoint | Expected | Observed | Status |
+|---|---|---|---|
+| Identity confirmed before offer | Confirm identity first | User confirmed "yes i'm the customer" before offer details | ✅ |
+| Property type collected | Residential eligible | Collected: residential | ✅ |
+| Sole vs joint ownership | Ask ownership | Collected: solely owned ("only on by me") | ✅ |
+| Original documents available | Ask about documents | Collected: original documents available | ✅ |
+| Amount above ₹75L handled | Explain cap of ₹75L | Agent explained ₹75L maximum and asked if customer wants to proceed at ₹75L | ✅ |
+| Customer declines alternative | End politely without checklist continuation | Customer declined ("no i need the full ninety lakh"); agent politely ended without calling them ineligible or asking remaining questions | ✅ |
 
 ---
 
