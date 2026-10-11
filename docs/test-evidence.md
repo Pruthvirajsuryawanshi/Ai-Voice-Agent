@@ -8,7 +8,7 @@ This document records the observed behavior from Bolna test calls. The results a
 | TC-02 | Agricultural property | [Recording](https://api.bolna.ai/recordings/call/2af6811d-778d-46e5-9a19-6bbafb4d9db1) | [Transcript](#tc-02-transcript) | **PASS** |
 | TC-03 | Cash income | [Recording](https://api.bolna.ai/recordings/call/42166302-55da-4de1-9f11-65c2b8bf02d9) | [Transcript](#tc-03-transcript) | **PASS** |
 | TC-07 | Amount above ₹75 lakh | [Recording](https://api.bolna.ai/recordings/call/3342066e-f151-4f01-b897-38fe3cc48592) | [Transcript](#tc-07-transcript) | **NEEDS REVIEW** |
-| TC-10 | Existing property loan | Not tested yet | Not tested yet | **NOT TESTED** |
+| TC-10 | Existing property loan | [Recording](https://api.bolna.ai/recordings/call/10350bed-c5fc-4005-bd4a-eeeef7fcde00) | [Transcript](#tc-10-transcript) | **PASS** |
 | TC-12 | Busy customer | [Recording](https://api.bolna.ai/recordings/call/7c6699ff-e467-44fa-a2aa-fff2cb0b7196) | [Transcript](#tc-12-transcript) | **PASS** |
 | TC-13 | Out-of-order information | [Recording](https://api.bolna.ai/recordings/call/cefb8b92-6772-4d72-b5d3-7d28664dfa5c) | [Transcript](#tc-13-transcript) | **PASS** |
 | TC-22 | Missing item before handoff | [Same recording as TC-13](https://api.bolna.ai/recordings/call/cefb8b92-6772-4d72-b5d3-7d28664dfa5c) | [Transcript evidence](#tc-13-transcript) | **PASS** |
@@ -273,6 +273,33 @@ This document records the observed behavior from Bolna test calls. The results a
 | Unclear speech handling | Re-ask politely | Agent re-asked when input was unclear ("an accident", "calorator") | ✅ |
 | Handoff to senior loan expert | Mention follow-up | Agent stated a senior loan expert will follow up | ✅ |
 | Disclaimer: not final approval | Must clarify | Agent stated "This is an initial eligibility check, not final loan approval" | ✅ |
+
+---
+
+### TC-10 Transcript
+
+**Scenario:** Existing property loan
+
+**Recording:** [https://api.bolna.ai/recordings/call/10350bed-c5fc-4005-bd4a-eeeef7fcde00](https://api.bolna.ai/recordings/call/10350bed-c5fc-4005-bd4a-eeeef7fcde00)
+
+> **Assistant:** Hello, may I speak with Test Customer?
+
+> **User:** yeah this is a test customer
+
+> **Assistant:** Thank you for confirming. I’m calling from Home Credit about a pre-approved Loan Against Property offer of up to seventy-five lakh rupees, with a repayment tenure of three to fifteen years. Would you like to continue with a brief eligibility check?
+
+> **User:** i already have a loan secured against this property and i want to reduce my email
+
+> **Assistant:** I understand. Since you mentioned an existing loan against the property or a need to reduce the EMI on that property loan, a loan- transfer specialist is the appropriate team to discuss your situation. Thank you for your time.
+
+**✅ Verification: PASS**
+
+| Checkpoint | Expected | Observed | Status |
+|---|---|---|---|
+| Identity confirmed before offer | Confirm identity first | User confirmed "yeah this is a test customer" before offer details | ✅ |
+| Existing property loan / EMI reduction routing | Route to loan-transfer specialist | Agent recognized existing loan / EMI reduction intent and routed to loan-transfer specialist | ✅ |
+| Do not continue fresh-loan checklist | Stop checklist immediately | Agent did not ask for property type, documents, or other fresh-loan items | ✅ |
+| Polite closure | End call gracefully | Agent explained routing and closed politely | ✅ |
 
 ---
 

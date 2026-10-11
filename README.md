@@ -37,10 +37,10 @@ Detailed transcripts and notes are in [`docs/test-evidence.md`](docs/test-eviden
 | TC-02 | Agricultural property | [Recording](https://api.bolna.ai/recordings/call/2af6811d-778d-46e5-9a19-6bbafb4d9db1) | [Transcript and review](docs/test-evidence.md#tc-02-transcript) | **PASS** |
 | TC-03 | Cash income | [Recording](https://api.bolna.ai/recordings/call/42166302-55da-4de1-9f11-65c2b8bf02d9) | [Transcript and review](docs/test-evidence.md#tc-03-transcript) | **PASS** |
 | TC-07 | Amount above ₹75 lakh | [Recording](https://api.bolna.ai/recordings/call/3342066e-f151-4f01-b897-38fe3cc48592) | [Transcript and review](docs/test-evidence.md#tc-07-transcript) | **NEEDS REVIEW** — confirm the customer's acceptance from audio because the transcript says “seventy five rupees.” |
-| TC-10 | Existing property loan | Not tested yet | Not tested yet | **NOT TESTED** |
-| TC-12 | Busy customer | [Recording](https://api.bolna.ai/recordings/call/7c6699ff-e467-44fa-a2aa-fff2cb0b7196) | [Transcript and review](docs/test-evidence.md#tc-06-transcript) | **PASS** |
-| TC-13 | Out-of-order information | [Recording](https://api.bolna.ai/recordings/call/cefb8b92-6772-4d72-b5d3-7d28664dfa5c) | [Transcript and review](docs/test-evidence.md#tc-07-transcript) | **PASS** |
-| TC-22 | Missing item before handoff | [Same recording as TC-13](https://api.bolna.ai/recordings/call/cefb8b92-6772-4d72-b5d3-7d28664dfa5c) | [Transcript and review](docs/test-evidence.md#tc-07-transcript) | **PASS** — the agent did not confirm eligibility when property market value was missing. |
+| TC-10 | Existing property loan | [Recording](https://api.bolna.ai/recordings/call/10350bed-c5fc-4005-bd4a-eeeef7fcde00) | [Transcript and review](docs/test-evidence.md#tc-10-transcript) | **PASS** — customer mentioned existing loan and EMI reduction; agent correctly routed to loan-transfer specialist without continuing fresh checklist. |
+| TC-12 | Busy customer | [Recording](https://api.bolna.ai/recordings/call/7c6699ff-e467-44fa-a2aa-fff2cb0b7196) | [Transcript and review](docs/test-evidence.md#tc-12-transcript) | **PASS** |
+| TC-13 | Out-of-order information | [Recording](https://api.bolna.ai/recordings/call/cefb8b92-6772-4d72-b5d3-7d28664dfa5c) | [Transcript and review](docs/test-evidence.md#tc-13-transcript) | **PASS** |
+| TC-22 | Missing item before handoff | [Same recording as TC-13](https://api.bolna.ai/recordings/call/cefb8b92-6772-4d72-b5d3-7d28664dfa5c) | [Transcript and review](docs/test-evidence.md#tc-13-transcript) | **PASS** — the agent did not confirm eligibility when property market value was missing. |
 
 ## Platform and configuration
 
