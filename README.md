@@ -46,15 +46,15 @@ Detailed transcripts and notes are in [`docs/test-evidence.md`](docs/test-eviden
 | TC-11 | EMI reduction request | [Recording](https://api.bolna.ai/recordings/call/10350bed-c5fc-4005-bd4a-eeeef7fcde00) | [Transcript](docs/test-evidence.md#tc-10-transcript) | **PASS** |
 | TC-12 | Busy customer | [Recording](https://api.bolna.ai/recordings/call/7c6699ff-e467-44fa-a2aa-fff2cb0b7196) | [Transcript](docs/test-evidence.md#tc-12-transcript) | **PASS** |
 | TC-13 | Out-of-order information | [Recording](https://api.bolna.ai/recordings/call/cefb8b92-6772-4d72-b5d3-7d28664dfa5c) | [Transcript](docs/test-evidence.md#tc-13-transcript) | **PASS** |
-| TC-14 | Multiple answers in one turn | — | — | **NOT TESTED** |
+| TC-14 | Multiple answers in one turn | [Same recording as TC-13](https://api.bolna.ai/recordings/call/cefb8b92-6772-4d72-b5d3-7d28664dfa5c) | [Transcript](docs/test-evidence.md#tc-13-transcript) | **PASS** |
 | TC-15 | Ambiguous document answer | — | — | **NOT TESTED** |
 | TC-16 | Customer correction | — | — | **NOT TESTED** |
 | TC-17 | Interest-rate inquiry | — | — | **NOT TESTED** |
 | TC-18 | Wrong person reached | — | — | **NOT TESTED** |
 | TC-19 | Customer declines offer | — | — | **NOT TESTED** |
 | TC-20 | Unrelated branch inquiry | — | — | **NOT TESTED** |
-| TC-21 | Self-employed with bank income | — | — | **NOT TESTED** |
-| TC-22 | Missing item before handoff | [Recording](https://api.bolna.ai/recordings/call/cefb8b92-6772-4d72-b5d3-7d28664dfa5c) | [Transcript](docs/test-evidence.md#tc-13-transcript) | **PASS** |
+| TC-21 | Self-employed with bank income | [Same recording as TC-13](https://api.bolna.ai/recordings/call/cefb8b92-6772-4d72-b5d3-7d28664dfa5c) | [Transcript](docs/test-evidence.md#tc-13-transcript) | **PASS** |
+| TC-22 | Missing item before handoff | [Same recording as TC-13](https://api.bolna.ai/recordings/call/cefb8b92-6772-4d72-b5d3-7d28664dfa5c) | [Transcript](docs/test-evidence.md#tc-13-transcript) | **PASS** |
 | TC-23 | Call interrupt / adversarial test | — | — | **NOT TESTED** |
 
 ## Platform and configuration

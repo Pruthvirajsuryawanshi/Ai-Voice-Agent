@@ -10,8 +10,11 @@ This document records the observed behavior from Bolna test calls. The results a
 | TC-07 | Amount above ₹75 lakh | [Recording](https://api.bolna.ai/recordings/call/3342066e-f151-4f01-b897-38fe3cc48592) | [Transcript](#tc-07-transcript) | **PASS** |
 | TC-09 | Joint ownership | [Same recording as TC-01](https://api.bolna.ai/recordings/call/c507da24-4fc2-4e88-aff3-2d5846c4e5ee) | [Transcript evidence](#tc-01-transcript) | **PASS** |
 | TC-10 | Existing property loan | [Recording](https://api.bolna.ai/recordings/call/10350bed-c5fc-4005-bd4a-eeeef7fcde00) | [Transcript](#tc-10-transcript) | **PASS** |
+| TC-11 | EMI reduction request | [Same recording as TC-10](https://api.bolna.ai/recordings/call/10350bed-c5fc-4005-bd4a-eeeef7fcde00) | [Transcript evidence](#tc-10-transcript) | **PASS** |
 | TC-12 | Busy customer | [Recording](https://api.bolna.ai/recordings/call/7c6699ff-e467-44fa-a2aa-fff2cb0b7196) | [Transcript](#tc-12-transcript) | **PASS** |
 | TC-13 | Out-of-order information | [Recording](https://api.bolna.ai/recordings/call/cefb8b92-6772-4d72-b5d3-7d28664dfa5c) | [Transcript](#tc-13-transcript) | **PASS** |
+| TC-14 | Multiple answers in one turn | [Same recording as TC-13](https://api.bolna.ai/recordings/call/cefb8b92-6772-4d72-b5d3-7d28664dfa5c) | [Transcript evidence](#tc-13-transcript) | **PASS** |
+| TC-21 | Self-employed with bank income | [Same recording as TC-13](https://api.bolna.ai/recordings/call/cefb8b92-6772-4d72-b5d3-7d28664dfa5c) | [Transcript evidence](#tc-13-transcript) | **PASS** |
 | TC-22 | Missing item before handoff | [Same recording as TC-13](https://api.bolna.ai/recordings/call/cefb8b92-6772-4d72-b5d3-7d28664dfa5c) | [Transcript evidence](#tc-13-transcript) | **PASS** |
 
 ---
