@@ -52,7 +52,7 @@ Detailed transcripts and notes are in [`docs/test-evidence.md`](docs/test-eviden
 | TC-17 | Interest-rate inquiry | [Recording](https://api.bolna.ai/recordings/call/a1aa28fb-2d30-4b80-aed3-d37581e537d2) | [Transcript](docs/test-evidence.md#tc-17-transcript) | **PASS** |
 | TC-18 | Wrong person reached | [Recording](https://api.bolna.ai/recordings/call/6db43621-d4af-4eaa-9b6d-808b1823ec41) | [Transcript](docs/test-evidence.md#tc-18-transcript) | **PASS** |
 | TC-19 | Customer declines offer | [Recording](https://api.bolna.ai/recordings/call/28209702-17da-41e0-9f0b-75e56c0ffc85) | [Transcript](docs/test-evidence.md#tc-19-transcript) | **PASS** |
-| TC-20 | Unrelated branch inquiry | — | — | **NOT TESTED** |
+| TC-20 | Unrelated question unsupported | [Recording](https://api.bolna.ai/recordings/call/25127b12-f2a3-4452-af53-d82c22aa753f) | [Transcript](docs/test-evidence.md#tc-20-transcript) | **PASS** |
 | TC-21 | Self-employed with bank income | [Same recording as TC-13](https://api.bolna.ai/recordings/call/cefb8b92-6772-4d72-b5d3-7d28664dfa5c) | [Transcript](docs/test-evidence.md#tc-13-transcript) | **PASS** |
 | TC-22 | Missing item before handoff | [Same recording as TC-13](https://api.bolna.ai/recordings/call/cefb8b92-6772-4d72-b5d3-7d28664dfa5c) | [Transcript](docs/test-evidence.md#tc-13-transcript) | **PASS** |
 | TC-23 | Call interrupt / adversarial test | — | — | **NOT TESTED** |
