@@ -1,0 +1,18 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+secrets/
+credentials/
+*.pem
+*.key
+
+# Local exports and temporary audio
+*.tmp
+*.log
+.DS_Store
+Thumbs.db
+
+# Avoid accidentally committing raw customer data
+customer-data/
+private-recordings/
