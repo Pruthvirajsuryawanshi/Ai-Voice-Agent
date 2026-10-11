@@ -50,7 +50,7 @@ Detailed transcripts and notes are in [`docs/test-evidence.md`](docs/test-eviden
 | TC-15 | Ambiguous document answer | — | — | **NOT TESTED** |
 | TC-16 | Customer correction | — | — | **NOT TESTED** |
 | TC-17 | Interest-rate inquiry | — | — | **NOT TESTED** |
-| TC-18 | Wrong person reached | — | — | **NOT TESTED** |
+| TC-18 | Wrong person reached | [Recording](https://api.bolna.ai/recordings/call/6db43621-d4af-4eaa-9b6d-808b1823ec41) | [Transcript](docs/test-evidence.md#tc-18-transcript) | **PASS** |
 | TC-19 | Customer declines offer | — | — | **NOT TESTED** |
 | TC-20 | Unrelated branch inquiry | — | — | **NOT TESTED** |
 | TC-21 | Self-employed with bank income | [Same recording as TC-13](https://api.bolna.ai/recordings/call/cefb8b92-6772-4d72-b5d3-7d28664dfa5c) | [Transcript](docs/test-evidence.md#tc-13-transcript) | **PASS** |

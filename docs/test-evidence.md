@@ -14,6 +14,7 @@ This document records the observed behavior from Bolna test calls. The results a
 | TC-12 | Busy customer | [Recording](https://api.bolna.ai/recordings/call/7c6699ff-e467-44fa-a2aa-fff2cb0b7196) | [Transcript](#tc-12-transcript) | **PASS** |
 | TC-13 | Out-of-order information | [Recording](https://api.bolna.ai/recordings/call/cefb8b92-6772-4d72-b5d3-7d28664dfa5c) | [Transcript](#tc-13-transcript) | **PASS** |
 | TC-14 | Multiple answers in one turn | [Same recording as TC-13](https://api.bolna.ai/recordings/call/cefb8b92-6772-4d72-b5d3-7d28664dfa5c) | [Transcript evidence](#tc-13-transcript) | **PASS** |
+| TC-18 | Wrong person | [Recording](https://api.bolna.ai/recordings/call/6db43621-d4af-4eaa-9b6d-808b1823ec41) | [Transcript](#tc-18-transcript) | **PASS** |
 | TC-21 | Self-employed with bank income | [Same recording as TC-13](https://api.bolna.ai/recordings/call/cefb8b92-6772-4d72-b5d3-7d28664dfa5c) | [Transcript evidence](#tc-13-transcript) | **PASS** |
 | TC-22 | Missing item before handoff | [Same recording as TC-13](https://api.bolna.ai/recordings/call/cefb8b92-6772-4d72-b5d3-7d28664dfa5c) | [Transcript evidence](#tc-13-transcript) | **PASS** |
 
@@ -384,6 +385,31 @@ This document records the observed behavior from Bolna test calls. The results a
 | Graceful handling of unclear input | Re-ask or clarify | Agent handled repeated/unclear user input patiently | ✅ |
 | Unable to proceed without required info | End if mandatory field missing | Agent ended call when property market value could not be provided | ✅ |
 | Polite closure | End call gracefully | Agent thanked for their time | ✅ |
+
+---
+
+### TC-18 Transcript
+
+**Scenario:** Wrong person reached
+
+**Recording:** [https://api.bolna.ai/recordings/call/6db43621-d4af-4eaa-9b6d-808b1823ec41](https://api.bolna.ai/recordings/call/6db43621-d4af-4eaa-9b6d-808b1823ec41)
+
+> **Assistant:** Hello, may I speak with Test Customer?
+
+> **User:** no i'm not the best customer
+
+> **Assistant:** I’m sorry for the confusion. Thank you for your time, and have a good day.
+
+**✅ Verification: PASS**
+
+| Checkpoint | Expected | Observed | Status |
+|---|---|---|---|
+| Customer denies identity | Identify wrong person response | Customer stated "no i'm not the [test] customer" | ✅ |
+| Offer not disclosed | Zero offer details disclosed | Agent revealed no loan or offer details | ✅ |
+| Apologize and close | Apologize for confusion and end politely | Agent said "I’m sorry for the confusion. Thank you for your time, and have a good day." | ✅ |
+| No checklist execution | Stop call immediately | Checklist was not initiated | ✅ |
+
+---
 
 ## Evidence rules
 
