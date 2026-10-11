@@ -47,7 +47,7 @@ Detailed transcripts and notes are in [`docs/test-evidence.md`](docs/test-eviden
 | TC-12 | Busy customer | [Recording](https://api.bolna.ai/recordings/call/7c6699ff-e467-44fa-a2aa-fff2cb0b7196) | [Transcript](docs/test-evidence.md#tc-12-transcript) | **PASS** |
 | TC-13 | Out-of-order information | [Recording](https://api.bolna.ai/recordings/call/cefb8b92-6772-4d72-b5d3-7d28664dfa5c) | [Transcript](docs/test-evidence.md#tc-13-transcript) | **PASS** |
 | TC-14 | Multiple answers in one turn | [Same recording as TC-13](https://api.bolna.ai/recordings/call/cefb8b92-6772-4d72-b5d3-7d28664dfa5c) | [Transcript](docs/test-evidence.md#tc-13-transcript) | **PASS** |
-| TC-15 | Ambiguous document answer | — | — | **NOT TESTED** |
+| TC-15 | Ambiguous document answer | [Recording](https://api.bolna.ai/recordings/call/1465aec0-6c98-4801-a57a-d73ad6b74280) | [Transcript](docs/test-evidence.md#tc-15-transcript) | **PASS** |
 | TC-16 | Customer correction | — | — | **NOT TESTED** |
 | TC-17 | Interest-rate inquiry | [Recording](https://api.bolna.ai/recordings/call/a1aa28fb-2d30-4b80-aed3-d37581e537d2) | [Transcript](docs/test-evidence.md#tc-17-transcript) | **PASS** |
 | TC-18 | Wrong person reached | [Recording](https://api.bolna.ai/recordings/call/6db43621-d4af-4eaa-9b6d-808b1823ec41) | [Transcript](docs/test-evidence.md#tc-18-transcript) | **PASS** |

@@ -18,6 +18,7 @@ This document records the observed behavior from Bolna test calls. The results a
 | TC-12 | Busy customer | [Recording](https://api.bolna.ai/recordings/call/7c6699ff-e467-44fa-a2aa-fff2cb0b7196) | [Transcript](#tc-12-transcript) | **PASS** |
 | TC-13 | Out-of-order information | [Recording](https://api.bolna.ai/recordings/call/cefb8b92-6772-4d72-b5d3-7d28664dfa5c) | [Transcript](#tc-13-transcript) | **PASS** |
 | TC-14 | Multiple answers in one turn | [Same recording as TC-13](https://api.bolna.ai/recordings/call/cefb8b92-6772-4d72-b5d3-7d28664dfa5c) | [Transcript evidence](#tc-13-transcript) | **PASS** |
+| TC-15 | Ambiguous document answer | [Recording](https://api.bolna.ai/recordings/call/1465aec0-6c98-4801-a57a-d73ad6b74280) | [Transcript](#tc-15-transcript) | **PASS** |
 | TC-17 | Interest-rate question | [Recording](https://api.bolna.ai/recordings/call/a1aa28fb-2d30-4b80-aed3-d37581e537d2) | [Transcript](#tc-17-transcript) | **PASS** |
 | TC-18 | Wrong person | [Recording](https://api.bolna.ai/recordings/call/6db43621-d4af-4eaa-9b6d-808b1823ec41) | [Transcript](#tc-18-transcript) | **PASS** |
 | TC-21 | Self-employed with bank income | [Same recording as TC-13](https://api.bolna.ai/recordings/call/cefb8b92-6772-4d72-b5d3-7d28664dfa5c) | [Transcript evidence](#tc-13-transcript) | **PASS** |
@@ -647,6 +648,53 @@ This document records the observed behavior from Bolna test calls. The results a
 | Graceful handling of unclear input | Re-ask or clarify | Agent handled repeated/unclear user input patiently | ✅ |
 | Unable to proceed without required info | End if mandatory field missing | Agent ended call when property market value could not be provided | ✅ |
 | Polite closure | End call gracefully | Agent thanked for their time | ✅ |
+
+---
+
+### TC-15 Transcript
+
+**Scenario:** Ambiguous document answer
+
+**Recording:** [https://api.bolna.ai/recordings/call/1465aec0-6c98-4801-a57a-d73ad6b74280](https://api.bolna.ai/recordings/call/1465aec0-6c98-4801-a57a-d73ad6b74280)
+
+> **Assistant:** Hello, may I speak with Test Customer?
+
+> **User:** yes that customer is here
+
+> **Assistant:** Thank you for confirming. I’m calling from Home Credit about a pre-approved Loan Against Property offer of up to seventy-five lakh rupees, with a repayment tenure of three to fifteen years. Would you like to continue with a brief eligibility check?
+
+> **User:** yes i would like to continue
+
+> **Assistant:** Great! To start, what type of property would you like to use for the loan—residential, commercial, or industrial?
+
+> **User:** it's a residential property
+
+> **Assistant:** Thank you. Is the property solely owned by you, or jointly owned with someone else?
+
+> **User:** yeah it's only online
+
+> **Assistant:** Sorry, I didn’t quite catch that. Is the property solely owned by you, or is it jointly owned with someone else?
+
+> **User:** yes it's totally on my meat
+
+> **Assistant:** Thank you for clarifying. Are the original property ownership documents available for verification?
+
+> **User:** i have some property papers but i'm not sure whether they are the originals or photocopies
+
+> **Assistant:** Thank you for sharing that. Could you please confirm if the original property ownership documents can be made available for verification, even if they are currently with you or someone else?
+
+> **User:** i'm not sure right now i need to check
+
+> **Assistant:** I understand. I’m unable to complete the preliminary eligibility check without that detail. Thank you for your time.
+
+**✅ Verification: PASS**
+
+| Checkpoint | Expected | Observed | Status |
+|---|---|---|---|
+| Identity confirmed before offer | Confirm identity first | User confirmed "yes that customer is here" before offer details | ✅ |
+| Clarify ambiguous documents | Do not assume document availability | Clarified whether originals can be made available for verification | ✅ |
+| Incomplete-assessment closing | End politely when required detail missing | Customer uncertain ("i need to check"); agent stated unable to complete assessment without that detail | ✅ |
+| No false ineligibility claim | Do not label customer ineligible | Agent did not falsely state customer failed eligibility, exited cleanly | ✅ |
 
 ---
 
