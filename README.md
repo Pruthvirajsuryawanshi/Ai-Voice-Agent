@@ -66,9 +66,13 @@ Detailed transcripts and notes are in [`docs/test-evidence.md`](docs/test-eviden
 
 ## Repository contents
 
-- `prompts/system-prompt-v4.txt` — include the exact prompt version that was used for each linked call.
-- `tests/essential-test-cases.md` — test scripts and expected behavior.
-- `docs/test-evidence.md` — detailed transcripts and observed results.
+- `prompts/system-prompt.md` — system prompt with identity gates, noise tolerance, and qualification criteria.
+- `tests/test-cases.md` — comprehensive test scripts and expected behavior for all 23 scenarios.
+- `tests/test-results-template.csv` — full execution evaluation matrix for all 23 test runs.
+- `docs/approach.md` — architectural strategy, state machine design, and decision logic.
+- `docs/test-evidence.md` — complete call transcripts, verification checkpoints, and links.
+- `demo-evidence/recordings/` — downloaded MP3 audio recordings for test cases (`TC-01.mp3` through `TC-23.mp3`).
+- `demo-evidence/transcripts/` — modular markdown transcripts for test cases (`TC-01.md` through `TC-23.md`).
 
 ## Privacy and evidence handling
 

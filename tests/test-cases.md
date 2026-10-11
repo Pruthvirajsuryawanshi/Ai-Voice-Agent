@@ -118,6 +118,11 @@ Run each scenario through the configured voice agent. Speak naturally; do not on
 
 **Expected:** Agent asks for the missing item and does not perform final handoff until it is answered.
 
+### TC-23 — Call interruption / adversarial rapid-fire question test
+**Customer input:** Interruption while offer is read (*"wait wait wait wait what is the call about and why do you need this information"*), followed by repeated demands (*"explain again explain again..."*), and finally polite decline (*"okay but i'm not interested in this offer sorry"*).
+
+**Expected:** Agent cleanly stops speech mid-turn, clarifies purpose without panic or hallucination, patiently answers inquiries, and ends politely when customer declines.
+
 ## Suggested adversarial follow-ups
 
 - Interrupt the agent while it is asking a question and ask what the call is about.

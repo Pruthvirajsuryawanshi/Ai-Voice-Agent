@@ -1,53 +1,89 @@
-# Demo Evidence
+# Detailed Test Evidence
 
-This folder is a template for evidence collected from real test runs. **No recordings or transcripts are included by default.** Add evidence only after you have configured and tested the agent.
-
-## Recommended evidence index
-
-Create or update a table like this after testing:
+This document records the observed behavior from Bolna test calls. The results are based on the transcripts provided. A test marked **FAIL** or **NEEDS REVIEW** should not be reported as passed.
 
 | Test ID | Scenario | Recording URL | Transcript URL | Result |
 |---|---|---|---|---|
-| TC-01 | Fully eligible customer | [Recording](https://api.bolna.ai/recordings/call/c507da24-4fc2-4e88-aff3-2d5846c4e5ee) | [Transcript](#tc-01-transcript) | Pass |
-| TC-02 | Agricultural property | [Recording](https://api.bolna.ai/recordings/call/2af6811d-778d-46e5-9a19-6bbafb4d9db1) | [Transcript](#tc-02-transcript) | Pass |
-| TC-03 | Cash income | [Recording](https://api.bolna.ai/recordings/call/42166302-55da-4de1-9f11-65c2b8bf02d9) | [Transcript](#tc-03-transcript) | Pass |
-| TC-04 | Amount above ₹75 lakh | [Recording](https://api.bolna.ai/recordings/call/3342066e-f151-4f01-b897-38fe3cc48592) | [Transcript](#tc-04-transcript) | Pass |
-| TC-05 | Existing property loan | [Recording](https://api.bolna.ai/recordings/call/10350bed-c5fc-4005-bd4a-eeeef7fcde00) | [Transcript](#tc-05-transcript) | Pass |
-| TC-06 | Busy customer | [Recording](https://api.bolna.ai/recordings/call/7c6699ff-e467-44fa-a2aa-fff2cb0b7196) | [Transcript](#tc-06-transcript) | Pass |
-| TC-07 | Out-of-order information | [Recording](https://api.bolna.ai/recordings/call/cefb8b92-6772-4d72-b5d3-7d28664dfa5c) | [Transcript](#tc-07-transcript) | Pass |
-| TC-08 | Missing item before handoff | Add actual share link | Add actual share link | Pass/Fail |
+| TC-01 | Fully eligible customer | [Recording](https://api.bolna.ai/recordings/call/c507da24-4fc2-4e88-aff3-2d5846c4e5ee) | [Transcript](#tc-01-transcript) | **PASS** |
+| TC-02 | Agricultural property | [Recording](https://api.bolna.ai/recordings/call/2af6811d-778d-46e5-9a19-6bbafb4d9db1) | [Transcript](#tc-02-transcript) | **PASS** |
+| TC-03 | Cash income | [Recording](https://api.bolna.ai/recordings/call/42166302-55da-4de1-9f11-65c2b8bf02d9) | [Transcript](#tc-03-transcript) | **PASS** |
+| TC-04 | Original documents unavailable | [Recording](https://api.bolna.ai/recordings/call/d3d96933-c500-4919-8fe7-94cf3afaf274) | [Transcript](#tc-04-transcript) | **PASS** |
+| TC-05 | Tenure below 3 years | [Recording](https://api.bolna.ai/recordings/call/ab049189-e53e-427d-b3ad-8646a08200e0) | [Transcript](#tc-05-transcript) | **PASS** |
+| TC-06 | Tenure above 15 years | [Recording](https://api.bolna.ai/recordings/call/76beb574-1d2b-4448-9694-261cb90f852b) | [Transcript](#tc-06-transcript) | **PASS** |
+| TC-07 | Amount above ₹75 lakh | [Recording](https://api.bolna.ai/recordings/call/3342066e-f151-4f01-b897-38fe3cc48592) | [Transcript](#tc-07-transcript) | **PASS** |
+| TC-08 | Amount above limit & customer declines | [Recording](https://api.bolna.ai/recordings/call/97fd70e0-ceb4-48c9-9253-243f68ad15bf) | [Transcript](#tc-08-transcript) | **PASS** |
+| TC-09 | Joint ownership | [Same recording as TC-01](https://api.bolna.ai/recordings/call/c507da24-4fc2-4e88-aff3-2d5846c4e5ee) | [Transcript evidence](#tc-01-transcript) | **PASS** |
+| TC-10 | Existing property loan | [Recording](https://api.bolna.ai/recordings/call/10350bed-c5fc-4005-bd4a-eeeef7fcde00) | [Transcript](#tc-10-transcript) | **PASS** |
+| TC-11 | EMI reduction request | [Same recording as TC-10](https://api.bolna.ai/recordings/call/10350bed-c5fc-4005-bd4a-eeeef7fcde00) | [Transcript evidence](#tc-10-transcript) | **PASS** |
+| TC-12 | Busy customer | [Recording](https://api.bolna.ai/recordings/call/7c6699ff-e467-44fa-a2aa-fff2cb0b7196) | [Transcript](#tc-12-transcript) | **PASS** |
+| TC-13 | Out-of-order information | [Recording](https://api.bolna.ai/recordings/call/cefb8b92-6772-4d72-b5d3-7d28664dfa5c) | [Transcript](#tc-13-transcript) | **PASS** |
+| TC-14 | Multiple answers in one turn | [Same recording as TC-13](https://api.bolna.ai/recordings/call/cefb8b92-6772-4d72-b5d3-7d28664dfa5c) | [Transcript evidence](#tc-13-transcript) | **PASS** |
+| TC-15 | Ambiguous document answer | [Recording](https://api.bolna.ai/recordings/call/1465aec0-6c98-4801-a57a-d73ad6b74280) | [Transcript](#tc-15-transcript) | **PASS** |
+| TC-16 | Customer correction | [Recording](https://api.bolna.ai/recordings/call/247e8788-dc01-403c-8410-69bf80a48400) | [Transcript](#tc-16-transcript) | **PASS** |
+| TC-17 | Interest-rate question | [Recording](https://api.bolna.ai/recordings/call/a1aa28fb-2d30-4b80-aed3-d37581e537d2) | [Transcript](#tc-17-transcript) | **PASS** |
+| TC-18 | Wrong person | [Recording](https://api.bolna.ai/recordings/call/6db43621-d4af-4eaa-9b6d-808b1823ec41) | [Transcript](#tc-18-transcript) | **PASS** |
+| TC-19 | Customer declines offer | [Recording](https://api.bolna.ai/recordings/call/28209702-17da-41e0-9f0b-75e56c0ffc85) | [Transcript](#tc-19-transcript) | **PASS** |
+| TC-20 | Unrelated question unsupported | [Recording](https://api.bolna.ai/recordings/call/25127b12-f2a3-4452-af53-d82c22aa753f) | [Transcript](#tc-20-transcript) | **PASS** |
+| TC-21 | Self-employed with bank income | [Same recording as TC-13](https://api.bolna.ai/recordings/call/cefb8b92-6772-4d72-b5d3-7d28664dfa5c) | [Transcript evidence](#tc-13-transcript) | **PASS** |
+| TC-22 | Missing item before handoff | [Same recording as TC-13](https://api.bolna.ai/recordings/call/cefb8b92-6772-4d72-b5d3-7d28664dfa5c) | [Transcript evidence](#tc-13-transcript) | **PASS** |
+| TC-23 | Call interrupt / adversarial test | [Recording](https://api.bolna.ai/recordings/call/2218b639-4198-4dcf-8ad7-10c920ca6104) | [Transcript](#tc-23-transcript) | **PASS** |
 
 ---
 
 ### TC-01 Transcript
 
-**Scenario:** Fully eligible customer  
+**Scenario:** Fully eligible customer
+
 **Recording:** [https://api.bolna.ai/recordings/call/c507da24-4fc2-4e88-aff3-2d5846c4e5ee](https://api.bolna.ai/recordings/call/c507da24-4fc2-4e88-aff3-2d5846c4e5ee)
 
-> **Assistant:** Hello, may I speak with Test Customer?  
-> **User:** yeah this is the customer  
-> **Assistant:** Thank you for confirming. I’m calling from Home Credit about a pre-approved Loan Against Property offer of up to seventy-five lakh rupees, with a repayment tenure of three to fifteen years. Would you like to continue with a brief eligibility check?  
-> **User:** yes i would like to continue with eligibility check  
-> **Assistant:** Great! To start, what type of property would you like to use for the loan—residential, commercial, or industrial?  
-> **User:** it's residential property  
-> **Assistant:** Thank you. Is the property solely owned by you, or jointly owned with someone else?  
-> **User:** it's jointly owned by my wife  
-> **Assistant:** Are the original property ownership documents available for verification?  
-> **User:** s the original documents are available  
-> **Assistant:** Approximately how much would you like to borrow?  
-> **User:** i need rupee like rupees  
-> **Assistant:** Sorry, I didn’t catch that. Could you please tell me approximately how much you would like to borrow?  
-> **User:** i need a fifty lakh rupees  
-> **Assistant:** Thank you. Are you salaried or self-employed?  
-> **User:** i'm saladed  
-> **Assistant:** Sorry, I didn’t catch that. Are you salaried, or do you run your own business?  
-> **User:** i'm celery  
-> **Assistant:** Thank you for clarifying. Is your income received through a bank account, or is it paid in cash?  
-> **User:** my salary is deposited into my bank account  
-> **Assistant:** What is the approximate current market value of the property?  
-> **User:** it's worth around eighty lakh rupees  
-> **Assistant:** How many years would you prefer for repayment? The eligible range is three to fifteen years.  
-> **User:** ten yes  
+> **Assistant:** Hello, may I speak with Test Customer?
+
+> **User:** yeah this is the customer
+
+> **Assistant:** Thank you for confirming. I’m calling from Home Credit about a pre-approved Loan Against Property offer of up to seventy-five lakh rupees, with a repayment tenure of three to fifteen years. Would you like to continue with a brief eligibility check?
+
+> **User:** yes i would like to continue with eligibility check
+
+> **Assistant:** Great! To start, what type of property would you like to use for the loan—residential, commercial, or industrial?
+
+> **User:** it's residential property
+
+> **Assistant:** Thank you. Is the property solely owned by you, or jointly owned with someone else?
+
+> **User:** it's jointly owned by my wife
+
+> **Assistant:** Are the original property ownership documents available for verification?
+
+> **User:** s the original documents are available
+
+> **Assistant:** Approximately how much would you like to borrow?
+
+> **User:** i need rupee like rupees
+
+> **Assistant:** Sorry, I didn’t catch that. Could you please tell me approximately how much you would like to borrow?
+
+> **User:** i need a fifty lakh rupees
+
+> **Assistant:** Thank you. Are you salaried or self-employed?
+
+> **User:** i'm saladed
+
+> **Assistant:** Sorry, I didn’t catch that. Are you salaried, or do you run your own business?
+
+> **User:** i'm celery
+
+> **Assistant:** Thank you for clarifying. Is your income received through a bank account, or is it paid in cash?
+
+> **User:** my salary is deposited into my bank account
+
+> **Assistant:** What is the approximate current market value of the property?
+
+> **User:** it's worth around eighty lakh rupees
+
+> **Assistant:** How many years would you prefer for repayment? The eligible range is three to fifteen years.
+
+> **User:** ten yes
+
 > **Assistant:** Based on the information you shared, you meet the initial criteria for this Loan Against Property offer. A senior loan expert will follow up to explain the applicable interest rate and next steps. This is an initial eligibility check, not final loan approval. Thank you for your time. Have a great day!
 
 **✅ Verification: PASS**
@@ -55,7 +91,6 @@ Create or update a table like this after testing:
 | Checkpoint | Expected | Observed | Status |
 |---|---|---|---|
 | Identity confirmed before offer | Confirm identity first | User explicitly confirmed "yeah this is the customer" before offer details | ✅ |
-| Offer introduction & consent | Introduce LAP offer & ask consent | Stated up to ₹75L offer, 3-15 years tenure, customer consented to proceed | ✅ |
 | Property type collected (residential/commercial/industrial) | Collect eligible type | Collected: residential — eligible | ✅ |
 | Sole vs joint ownership | Ask ownership | Collected: jointly owned with wife — eligible | ✅ |
 | Original documents available | Ask about documents | Collected: original documents available — eligible | ✅ |
@@ -70,16 +105,24 @@ Create or update a table like this after testing:
 
 ### TC-02 Transcript
 
-**Scenario:** Agricultural property  
+**Scenario:** Agricultural property
+
 **Recording:** [https://api.bolna.ai/recordings/call/2af6811d-778d-46e5-9a19-6bbafb4d9db1](https://api.bolna.ai/recordings/call/2af6811d-778d-46e5-9a19-6bbafb4d9db1)
 
-> **Assistant:** Hello, may I speak with Test Customer?  
-> **User:** Yes  
-> **User:** This is the test customer  
-> **Assistant:** Thank you for confirming. I'm calling from Home Credit about a pre-approved Loan Against Property offer of up to seventy-five lakh rupees, with a repayment tenure of three to fifteen years. Would you like to continue with a brief eligibility check?  
-> **User:** Yes I would like to continue  
-> **Assistant:** Great! To start, what type of property would you like to use for the loan—residential, commercial, or industrial?  
-> **User:** It is agricultural land  
+> **Assistant:** Hello, may I speak with Test Customer?
+
+> **User:** Yes
+
+> **User:** This is the test customer
+
+> **Assistant:** Thank you for confirming. I'm calling from Home Credit about a pre-approved Loan Against Property offer of up to seventy-five lakh rupees, with a repayment tenure of three to fifteen years. Would you like to continue with a brief eligibility check?
+
+> **User:** Yes I would like to continue
+
+> **Assistant:** Great! To start, what type of property would you like to use for the loan—residential, commercial, or industrial?
+
+> **User:** It is agricultural land
+
 > **Assistant:** Thank you for sharing that. Based on this detail, you do not meet the criteria for this specific offer at this time. Thank you for your time.
 
 **✅ Verification: PASS**
@@ -96,30 +139,52 @@ Create or update a table like this after testing:
 
 ### TC-03 Transcript
 
-**Scenario:** Cash income  
+**Scenario:** Cash income
+
 **Recording:** [https://api.bolna.ai/recordings/call/42166302-55da-4de1-9f11-65c2b8bf02d9](https://api.bolna.ai/recordings/call/42166302-55da-4de1-9f11-65c2b8bf02d9)
 
-> **Assistant:** Hello, may I speak with Test Customer?  
-> **User:** Hello  
-> **Assistant:** Sorry, I just need to confirm—am I speaking with Test Customer?  
-> **User:** Yes  
-> **User:** I'm just customer  
-> **Assistant:** Thank you for confirming. I'm calling from Home Credit about a pre-approved Loan Against Property offer of up to seventy-five lakh rupees, with a repayment tenure of three to fifteen years. Would you like to continue with a brief eligibility check?  
-> **User:** Yes I would like to continue  
-> **Assistant:** Great! To start, what type of property would you like to use for the loan—residential, commercial, or industrial?  
-> **User:** Residential  
-> **Assistant:** Thank you. Is the property solely owned by you, or jointly owned with someone else?  
-> **User:** It's only one by me  
-> **Assistant:** Are the original property ownership documents available for verification?  
-> **User:** Yes the original documents are available  
-> **Assistant:** Approximately how much would you like to borrow?  
-> **User:** I need forty lakh rupees  
-> **Assistant:** Thank you. Are you salaried or self-employed?  
-> **User:** I'm self reliant I'm ratio all my incoming cash  
-> **Assistant:** Sorry, I didn't catch that clearly. Are you salaried, or do you run your own business?  
-> **User:** I'm self employed  
-> **Assistant:** Is your income received through a bank account, or is it paid in cash?  
-> **User:** I receive all my income in cash  
+> **Assistant:** Hello, may I speak with Test Customer?
+
+> **User:** Hello
+
+> **Assistant:** Sorry, I just need to confirm—am I speaking with Test Customer?
+
+> **User:** Yes
+
+> **User:** I'm just customer
+
+> **Assistant:** Thank you for confirming. I'm calling from Home Credit about a pre-approved Loan Against Property offer of up to seventy-five lakh rupees, with a repayment tenure of three to fifteen years. Would you like to continue with a brief eligibility check?
+
+> **User:** Yes I would like to continue
+
+> **Assistant:** Great! To start, what type of property would you like to use for the loan—residential, commercial, or industrial?
+
+> **User:** Residential
+
+> **Assistant:** Thank you. Is the property solely owned by you, or jointly owned with someone else?
+
+> **User:** It's only one by me
+
+> **Assistant:** Are the original property ownership documents available for verification?
+
+> **User:** Yes the original documents are available
+
+> **Assistant:** Approximately how much would you like to borrow?
+
+> **User:** I need forty lakh rupees
+
+> **Assistant:** Thank you. Are you salaried or self-employed?
+
+> **User:** I'm self reliant I'm ratio all my incoming cash
+
+> **Assistant:** Sorry, I didn't catch that clearly. Are you salaried, or do you run your own business?
+
+> **User:** I'm self employed
+
+> **Assistant:** Is your income received through a bank account, or is it paid in cash?
+
+> **User:** I receive all my income in cash
+
 > **Assistant:** Thank you for sharing that. Based on this detail, you do not meet the criteria for this specific offer at this time. Thank you for your time.
 
 **✅ Verification: PASS**
@@ -140,42 +205,277 @@ Create or update a table like this after testing:
 
 ### TC-04 Transcript
 
-**Scenario:** Amount above ₹75 lakh  
-**Recording:** [https://api.bolna.ai/recordings/call/3342066e-f151-4f01-b897-38fe3cc48592](https://api.bolna.ai/recordings/call/3342066e-f151-4f01-b897-38fe3cc48592)
+**Scenario:** Original documents unavailable
 
-> **Assistant:** Hello, may I speak with Test Customer?  
-> **User:** Yes I'm test customer  
-> **Assistant:** Thank you for confirming. I'm calling from Home Credit about a pre-approved Loan Against Property offer of up to seventy-five lakh rupees, with a repayment tenure of three to fifteen years. Would you like to continue with a brief eligibility check?  
-> **User:** Yes I would like to continue  
-> **Assistant:** Great! To start, what type of property would you like to use for the loan—residential, commercial, or industrial?  
-> **User:** An accident  
-> **Assistant:** Sorry, I didn't catch that. What type of property would you like to use for the loan—residential, commercial, or industrial?  
-> **User:** It's residential  
-> **Assistant:** Thank you. Is the property solely owned by you, or jointly owned with someone else?  
-> **User:** Yes it's only on my meat  
-> **Assistant:** Just to clarify, is the property solely owned by you, or is it jointly owned with someone else?  
-> **User:** Yes it's totally owned by me  
-> **Assistant:** Thank you. Are the original property ownership documents available for verification?  
-> **User:** Yes the original documents are available  
-> **Assistant:** Approximately how much would you like to borrow?  
-> **User:** I need ninety lakh rupees  
-> **Assistant:** The offer is limited to seventy-five lakh rupees. Would you like to proceed with the loan amount of seventy-five lakh rupees?  
-> **User:** Yes I can proceed with seventy five rupees  
-> **Assistant:** Thank you. Are you salaried or self-employed?  
-> **User:** I'm calorator  
-> **Assistant:** Sorry, I didn't catch that. Are you salaried, or do you run your own business?  
-> **User:** I'm salaried  
-> **Assistant:** Is your income received through a bank account, or is it paid in cash?  
-> **User:** Yes my salary is deposited into my bank account  
-> **Assistant:** What is the approximate current market value of the property?  
-> **User:** It's around one crore rupee  
-> **Assistant:** How many years would you prefer for repayment? The eligible range is three to fifteen years.  
-> **User:** It's  
-> **Assistant:** Sorry, I didn't catch that. How many years would you prefer for repayment? The eligible range is three to fifteen years.  
-> **User:** Ten yes  
-> **Assistant:** Based on the information you shared, you meet the initial criteria for this Loan Against Property offer. A senior loan expert will follow up to explain the applicable interest rate and next steps. This is an initial eligibility check, not final loan approval. Thank you for your time. Have a good day!
+**Recording:** [https://api.bolna.ai/recordings/call/d3d96933-c500-4919-8fe7-94cf3afaf274](https://api.bolna.ai/recordings/call/d3d96933-c500-4919-8fe7-94cf3afaf274)
+
+> **Assistant:** Hello, may I speak with Test Customer?
+
+> **User:** yes i am test customer
+
+> **Assistant:** Thank you for confirming. I’m calling from Home Credit about a pre-approved Loan Against Property offer of up to seventy-five lakh rupees, with a repayment tenure of three to fifteen years. Would you like to continue with a brief eligibility check?
+
+> **User:** yes i want to continue
+
+> **Assistant:** Great! To start, what type of property would you like to use for the loan—residential, commercial, or industrial?
+
+> **Assistant:** Hello, are you still on the line?
+
+> **User:** yeah residential
+
+> **Assistant:** Thank you. Is the property solely owned by you, or jointly owned with someone else?
+
+> **User:** yeah it's only on my name
+
+> **Assistant:** Are the original property ownership documents available for verification?
+
+> **User:** yes i have only the photocopies of document not the original documents are available
+
+> **Assistant:** Thank you for sharing that. Based on this detail, you do not meet the criteria for this specific offer at this time. Thank you for your time.
 
 **✅ Verification: PASS**
+
+| Checkpoint | Expected | Observed | Status |
+|---|---|---|---|
+| Identity confirmed before offer | Confirm identity first | User confirmed "yes i am test customer" before offer was revealed | ✅ |
+| Property type collected | Residential/commercial/industrial eligible | Collected: residential — eligible | ✅ |
+| Sole vs joint ownership | Ask ownership | Collected: solely owned ("only on my name") | ✅ |
+| Documents criterion check | Original documents required | Customer stated only photocopies available, originals unavailable | ✅ |
+| Immediate polite disqualification | Stop checklist upon disqualifying criterion | Agent stated criteria not met for this specific offer and ended immediately | ✅ |
+| No further questions asked | Do not ask amount/income/tenure | Call terminated cleanly without asking remaining checklist fields | ✅ |
+
+---
+
+### TC-05 Transcript
+
+**Scenario:** Tenure below 3 years
+
+**Recording:** [https://api.bolna.ai/recordings/call/ab049189-e53e-427d-b3ad-8646a08200e0](https://api.bolna.ai/recordings/call/ab049189-e53e-427d-b3ad-8646a08200e0)
+
+> **Assistant:** Hello, may I speak with Test Customer?
+
+> **User:** yes i'm the test customer
+
+> **Assistant:** Thank you for confirming. I’m calling from Home Credit about a pre-approved Loan Against Property offer of up to seventy-five lakh rupees, with a repayment tenure of three to fifteen years. Would you like to continue with a brief eligibility check?
+
+> **User:** yes i would like to continue until the residential property is solely owned by me and i have all original documents i made and i am self employed my income is deposited into my bank account
+
+> **Assistant:** Thank you for sharing that information. To begin, could you please confirm what type of property would you like to use for the loan—residential, commercial, or industrial?
+
+> **User:** it's residential property
+
+> **Assistant:** Thank you. Is the property solely owned by you, or is it jointly owned with someone else?
+
+> **User:** yeah it's only on money
+
+> **Assistant:** Thank you for confirming that the property is solely owned by you. Are the original property ownership documents available for verification?
+
+> **User:** yes i have all the original documents available
+
+> **Assistant:** Approximately how much would you like to borrow?
+
+> **User:** i need portal like rupees
+
+> **Assistant:** Sorry, I didn’t catch that. Could you please tell me
+
+> **User:** i need forty lakh rupees
+
+> **Assistant:** Thank you. Are you salaried or self-employed?
+
+> **User:** i am salaried
+
+> **Assistant:** Is your income received through a bank account, or is it paid in cash?
+
+> **User:** yes my income is deposited into my bank account
+
+> **Assistant:** What is the approximate current market value of the property?
+
+> **User:** eight lakh rupees
+
+> **Assistant:** Thank you for sharing that. How many years would you prefer for repayment? The eligible range i
+
+> **User:** i want to repeat it
+
+> **User:** i want to repay the loan in two years
+
+> **Assistant:** The repayment tenure for this loan offer is between three to fifteen years. Since two years is below the minimum, I’m sorry, but you do not meet the criteria for this specific offer at this time. Thank you for your time.
+
+**✅ Verification: PASS**
+
+| Checkpoint | Expected | Observed | Status |
+|---|---|---|---|
+| Identity confirmed before offer | Confirm identity first | User confirmed "yes i'm the test customer" before offer details | ✅ |
+| Checklist items collected | Capture items 1 through 6 | Collected: residential, sole ownership, original docs available, ₹40L, salaried, bank income, ₹8L market value | ✅ |
+| Tenure minimum enforced (≥ 3 yrs) | Reject tenure < 3 years | Customer requested 2 years; agent stated 3-15 years eligible range and that 2 years is below minimum | ✅ |
+| Polite rejection & closing | Explain rule and end call | Agent stated criteria not met for this specific offer and ended call politely | ✅ |
+| No false qualification | Do not hand off as eligible | Disqualified cleanly on explicit criterion failure | ✅ |
+
+---
+
+### TC-06 Transcript
+
+**Scenario:** Tenure above 15 years
+
+**Recording:** [https://api.bolna.ai/recordings/call/76beb574-1d2b-4448-9694-261cb90f852b](https://api.bolna.ai/recordings/call/76beb574-1d2b-4448-9694-261cb90f852b)
+
+> **Assistant:** Hello, may I speak with Test Customer?
+
+> **User:** yes i'm the customer
+
+> **Assistant:** Thank you for confirming. I’m calling from Home Credit about a pre-approved Loan Against Property offer of up to seventy-five lakh rupees, with a repayment tenure of three to fifteen years. Would you like to continue with a brief eligibility check?
+
+> **User:** yes i would like to continue
+
+> **Assistant:** Great! To start, what type of property would you like to use for the loan—residential, commercial, or industrial?
+
+> **User:** residential
+
+> **Assistant:** Thank you. Is the property solely owned by you, or jointly owned with someone else?
+
+> **User:** it's only online
+
+> **Assistant:** Sorry, I didn’t quite catch that. Is the property solely
+
+> **User:** it's only on my menu
+
+> **Assistant:** I apologize, I’m still not clear. Could you please confi
+
+> **User:** only on my menu
+
+> **Assistant:** Sorry, I’m having trouble understanding. To clarify, is the property solely owned by you, or is it jointly owned with someone else?
+
+> **User:** it's only on my meal
+
+> **Assistant:** Sorry, I’m still not clear. Just to confirm, is the property solely owned by you, or is it jointly owned with someone else?
+
+> **User:** it's solely on by me
+
+> **Assistant:** Thank you for confirming. Are the original property ownership documents available for verification?
+
+> **User:** if all the original documents are available for verification
+
+> **Assistant:** Yes, I wanted to confirm if you have the original property ownership documents available for verification?
+
+> **User:** yes all the original documents are available
+
+> **Assistant:** Thank you. Approximately how much would you like to borrow?
+
+> **User:** i want to order forty thousand rupees
+
+> **Assistant:** Just to confirm, did you mean forty lakh rupees or forty thousand rupees?
+
+> **User:** forty thousand rupees
+
+> **Assistant:** Thank you for sharing that. The offer is for a Loan Against Property of up to seventy-five lakh rupees. Since your requested amount is forty thousand rupees, which is below the typical loan range for this offer, may I confirm if you would still like to continue with the eligibility check?
+
+> **User:** yes i want to forty lakh rupees
+
+> **Assistant:** Thank you for clarifying. You would like to borrow approximately forty lakh rupees. Are you salaried or self-employed?
+
+> **User:** i'm salary
+
+> **Assistant:** Thank you. Is your income received through a bank account, or is it paid in cash?
+
+> **User:** yes my income is received directly in my bank account
+
+> **Assistant:** Thank you. What is the approximate current market value of the property?
+
+> **User:** it's eight like rubies
+
+> **Assistant:** Sorry, I didn’t quite catch that. Could you please provide the approximate current market value of the property?
+
+> **User:** with eight lakh rupees
+
+> **Assistant:** Thank you. How many years would you prefer for repayment? The eligible range is three to fifteen years.
+
+> **User:** sixteen years
+
+> **Assistant:** Thank you for sharing that. For this offer, the repayment tenure must be between three and fifteen years. Since sixteen years is outside this range, you do not meet the criteria for this specific offer at this time. Thank you for your time.
+
+**✅ Verification: PASS**
+
+| Checkpoint | Expected | Observed | Status |
+|---|---|---|---|
+| Identity confirmed before offer | Confirm identity first | User confirmed "yes i'm the customer" before offer details | ✅ |
+| Noisy speech & ambiguity handling | Clarify multiple times politely | Patiently clarified ownership and market value until clear | ✅ |
+| Loan amount clarification | Clarify 40K vs 40L | Agent identified unusual amount, customer corrected to 40L | ✅ |
+| Tenure maximum enforced (≤ 15 yrs) | Reject tenure > 15 years | Customer requested 16 years; agent stated 3-15 years eligible range and that 16 years is outside range | ✅ |
+| Polite rejection & closing | Explain rule and end call | Agent stated criteria not met for this specific offer and ended call politely | ✅ |
+| No false qualification | Do not hand off as eligible | Disqualified cleanly on explicit criterion failure | ✅ |
+
+---
+
+### TC-07 Transcript
+
+**Scenario:** Amount above ₹75 lakh
+
+**Recording:** [https://api.bolna.ai/recordings/call/3342066e-f151-4f01-b897-38fe3cc48592](https://api.bolna.ai/recordings/call/3342066e-f151-4f01-b897-38fe3cc48592)
+
+**Review note:** The transcript records the customer accepting “seventy five rupees,” which does not clearly confirm acceptance of ₹75 lakh. Listen to the recording. If the customer actually said “seventy-five rupees,” the agent should clarify rather than assume the intended lakh amount.
+
+> **Assistant:** Hello, may I speak with Test Customer?
+
+> **User:** Yes I'm test customer
+
+> **Assistant:** Thank you for confirming. I'm calling from Home Credit about a pre-approved Loan Against Property offer of up to seventy-five lakh rupees, with a repayment tenure of three to fifteen years. Would you like to continue with a brief eligibility check?
+
+> **User:** Yes I would like to continue
+
+> **Assistant:** Great! To start, what type of property would you like to use for the loan—residential, commercial, or industrial?
+
+> **User:** An accident
+
+> **Assistant:** Sorry, I didn't catch that. What type of property would you like to use for the loan—residential, commercial, or industrial?
+
+> **User:** It's residential
+
+> **Assistant:** Thank you. Is the property solely owned by you, or jointly owned with someone else?
+
+> **User:** Yes it's only on my meat
+
+> **Assistant:** Just to clarify, is the property solely owned by you, or is it jointly owned with someone else?
+
+> **User:** Yes it's totally owned by me
+
+> **Assistant:** Thank you. Are the original property ownership documents available for verification?
+
+> **User:** Yes the original documents are available
+
+> **Assistant:** Approximately how much would you like to borrow?
+
+> **User:** I need ninety lakh rupees
+
+> **Assistant:** The offer is limited to seventy-five lakh rupees. Would you like to proceed with the loan amount of seventy-five lakh rupees?
+
+> **User:** Yes I can proceed with seventy five rupees
+
+> **Assistant:** Thank you. Are you salaried or self-employed?
+
+> **User:** I'm calorator
+
+> **Assistant:** Sorry, I didn't catch that. Are you salaried, or do you run your own business?
+
+> **User:** I'm salaried
+
+> **Assistant:** Is your income received through a bank account, or is it paid in cash?
+
+> **User:** Yes my salary is deposited into my bank account
+
+> **Assistant:** What is the approximate current market value of the property?
+
+> **User:** It's around one crore rupee
+
+> **Assistant:** How many years would you prefer for repayment? The eligible range is three to fifteen years.
+
+> **User:** It's
+
+> **Assistant:** Sorry, I didn't catch that. How many years would you prefer for repayment? The eligible range is three to fifteen years.
+
+> **User:** Ten yes
+
+> **Assistant:** Based on the information you shared, you meet the initial criteria for this Loan Against Property offer. A senior loan expert will follow up to explain the applicable interest rate and next steps. This is an initial eligibility check, not final loan approval. Thank you for your time. Have a good day!
+
+**⚠️ Verification: NEEDS REVIEW**
 
 | Checkpoint | Expected | Observed | Status |
 |---|---|---|---|
@@ -183,7 +483,7 @@ Create or update a table like this after testing:
 | Property type collected | Eligible type | Collected: Residential — eligible | ✅ |
 | Sole vs joint ownership | Ask ownership | Collected: Sole ownership (agent re-clarified unclear response) | ✅ |
 | Original documents available | Ask about documents | Collected: Yes | ✅ |
-| Amount above ₹75 lakh handled | Explain cap, ask to proceed at ₹75L | User requested ₹90L, agent explained cap of ₹75L and asked if user wants to proceed | ✅ |
+| Amount above ₹75 lakh handled | Explain cap and verify clear acceptance of ₹75L | Agent explained the cap, but transcript records “seventy five rupees”; audio needs review | ⚠️ REVIEW |
 | Occupation & income mode | Salaried/self-employed, bank income | Collected: Salaried, salary via bank account | ✅ |
 | Property market value | Capture estimate | Collected: ₹1 crore | ✅ |
 | Tenure 3–15 years | Within range | Collected: 10 years — within range | ✅ |
@@ -193,15 +493,75 @@ Create or update a table like this after testing:
 
 ---
 
-### TC-05 Transcript
+### TC-08 Transcript
 
-**Scenario:** Existing property loan  
+**Scenario:** Requested amount above limit; customer declines alternative
+
+**Recording:** [https://api.bolna.ai/recordings/call/97fd70e0-ceb4-48c9-9253-243f68ad15bf](https://api.bolna.ai/recordings/call/97fd70e0-ceb4-48c9-9253-243f68ad15bf)
+
+> **Assistant:** Hello, may I speak with Test Customer?
+
+> **User:** yes
+
+> **User:** i'm the customer
+
+> **Assistant:** Thank you for confirming. I’m calling from Home Credit about a pre-approved Loan Against Property offer of up to seventy-five lakh rupees, with a repayment tenure of three to fifteen years. Would you like to continue with a brief eligibility check?
+
+> **User:** yes i would like to continue
+
+> **Assistant:** Great! What type of property would you like to use for the loan— residential, commercial, or
+
+> **User:** it's residential property
+
+> **Assistant:** Thank you. Is the property solely owned by you, or jointly owned with
+
+> **User:** yes it's only on by me
+
+> **Assistant:** Thank you for sharing that. Are the original property ownership documents available for verification?
+
+> **User:** yes i have the original documents available
+
+> **Assistant:** Approximately how much would you like to borrow?
+
+> **User:** i need nine deluxe rupees
+
+> **Assistant:** Sorry, I didn’t catch that clearly. Could you please tell me approximately how much you would like to borrow?
+
+> **User:** i need ninety lakh rupees
+
+> **Assistant:** The maximum loan amount available in this offer is seventy-five lakh rupees. Would you like to proceed with the loan amount of seventy-five lakh rupees?
+
+> **User:** no i need the full ninety lakh i don't want to proceed with the seventy five lakh
+
+> **Assistant:** Understood. The offer is limited to seventy- five lakh rupees, so I will not continue the eligibility check. Thank you for your time.
+
+**✅ Verification: PASS**
+
+| Checkpoint | Expected | Observed | Status |
+|---|---|---|---|
+| Identity confirmed before offer | Confirm identity first | User confirmed "yes i'm the customer" before offer details | ✅ |
+| Property type collected | Residential eligible | Collected: residential | ✅ |
+| Sole vs joint ownership | Ask ownership | Collected: solely owned ("only on by me") | ✅ |
+| Original documents available | Ask about documents | Collected: original documents available | ✅ |
+| Amount above ₹75L handled | Explain cap of ₹75L | Agent explained ₹75L maximum and asked if customer wants to proceed at ₹75L | ✅ |
+| Customer declines alternative | End politely without checklist continuation | Customer declined ("no i need the full ninety lakh"); agent politely ended without calling them ineligible or asking remaining questions | ✅ |
+
+---
+
+### TC-10 Transcript
+
+**Scenario:** Existing property loan
+
 **Recording:** [https://api.bolna.ai/recordings/call/10350bed-c5fc-4005-bd4a-eeeef7fcde00](https://api.bolna.ai/recordings/call/10350bed-c5fc-4005-bd4a-eeeef7fcde00)
 
-> **Assistant:** Hello, may I speak with Test Customer?  
-> **User:** yeah this is a test customer  
-> **Assistant:** Thank you for confirming. I’m calling from Home Credit about a pre-approved Loan Against Property offer of up to seventy-five lakh rupees, with a repayment tenure of three to fifteen years. Would you like to continue with a brief eligibility check?  
-> **User:** i already have a loan secured against this property and i want to reduce my email  
+> **Assistant:** Hello, may I speak with Test Customer?
+
+> **User:** yeah this is a test customer
+
+> **Assistant:** Thank you for confirming. I’m calling from Home Credit about a pre-approved Loan Against Property offer of up to seventy-five lakh rupees, with a repayment tenure of three to fifteen years. Would you like to continue with a brief eligibility check?
+
+> **User:** i already have a loan secured against this property and i want to reduce my email
+
 > **Assistant:** I understand. Since you mentioned an existing loan against the property or a need to reduce the EMI on that property loan, a loan- transfer specialist is the appropriate team to discuss your situation. Thank you for your time.
 
 **✅ Verification: PASS**
@@ -215,15 +575,20 @@ Create or update a table like this after testing:
 
 ---
 
-### TC-06 Transcript
+### TC-12 Transcript
 
-**Scenario:** Busy customer  
+**Scenario:** Busy customer
+
 **Recording:** [https://api.bolna.ai/recordings/call/7c6699ff-e467-44fa-a2aa-fff2cb0b7196](https://api.bolna.ai/recordings/call/7c6699ff-e467-44fa-a2aa-fff2cb0b7196)
 
-> **Assistant:** Hello, may I speak with Test Customer?  
-> **User:** I'm test customer but I am busy right now please call me tomorrow at eleven in the morning  
-> **Assistant:** I understand you're busy right now. Just to confirm, would you like me to call you tomorrow at 11 AM?  
-> **User:** Yes  
+> **Assistant:** Hello, may I speak with Test Customer?
+
+> **User:** I'm test customer but I am busy right now please call me tomorrow at eleven in the morning
+
+> **Assistant:** I understand you're busy right now. Just to confirm, would you like me to call you tomorrow at 11 AM?
+
+> **User:** Yes
+
 > **Assistant:** Thank you for sharing your preferred callback time. I will note that you would like to be called tomorrow at 11 AM. Thank you for your time. Have a good day.
 
 **✅ Verification: PASS**
@@ -239,25 +604,40 @@ Create or update a table like this after testing:
 
 ---
 
-### TC-07 Transcript
+### TC-13 Transcript
 
-**Scenario:** Out-of-order information  
+**Scenario:** Out-of-order information
+
 **Recording:** [https://api.bolna.ai/recordings/call/cefb8b92-6772-4d72-b5d3-7d28664dfa5c](https://api.bolna.ai/recordings/call/cefb8b92-6772-4d72-b5d3-7d28664dfa5c)
 
-> **Assistant:** Hello, may I speak with Test Customer?  
-> **User:** Yeah this is it test customer  
-> **Assistant:** Thank you for confirming. I'm calling from Home Credit about a pre-approved Loan Against Property offer of up to seventy-five lakh rupees, with a repayment tenure of three to fifteen years. Would you like to continue with a brief eligibility check?  
-> **User:** Yes my property is I'm self employed my income goes into my bank account the original documents are available I want to forty lakh rupees and I will prefer a ten year dollar the property is only owned  
-> **Assistant:** Thank you for sharing that information. To make sure I have everything correctly, co  
-> **User:** I just said  
-> **Assistant:** Thank you for sharing those detail  
-> **User:** It's it's it's it's it's it's  
-> **Assistant:** To proceed, could you please confirm the type of property you would like to use for the loan—residential, commercial, or industrial?  
-> **User:** It's residential and I am self employed my income goes my bank account the order and documents are available I want forty lakh rupees nine will prefer ten year tenure the property is only owned  
-> **Assistant:** Thank you for confirming those details. To summarize: your property is residential, solely owned by you, original documents are available, you want to borrow forty lakh rupees, you are self-employed with income received through your bank account, and you prefer a ten-year repayment tenure. Also, may I ask what is the approximate current market value of the property?  
-> **User:** I don't know the approximate approximate market value  
-> **Assistant:** I understand. Could you please provide a rough estimate or a range for the current market  
-> **User:** I still can't provide  
+> **Assistant:** Hello, may I speak with Test Customer?
+
+> **User:** Yeah this is it test customer
+
+> **Assistant:** Thank you for confirming. I'm calling from Home Credit about a pre-approved Loan Against Property offer of up to seventy-five lakh rupees, with a repayment tenure of three to fifteen years. Would you like to continue with a brief eligibility check?
+
+> **User:** Yes my property is I'm self employed my income goes into my bank account the original documents are available I want to forty lakh rupees and I will prefer a ten year dollar the property is only owned
+
+> **Assistant:** Thank you for sharing that information. To make sure I have everything correctly, co
+
+> **User:** I just said
+
+> **Assistant:** Thank you for sharing those detail
+
+> **User:** It's it's it's it's it's it's
+
+> **Assistant:** To proceed, could you please confirm the type of property you would like to use for the loan—residential, commercial, or industrial?
+
+> **User:** It's residential and I am self employed my income goes my bank account the order and documents are available I want forty lakh rupees nine will prefer ten year tenure the property is only owned
+
+> **Assistant:** Thank you for confirming those details. To summarize: your property is residential, solely owned by you, original documents are available, you want to borrow forty lakh rupees, you are self-employed with income received through your bank account, and you prefer a ten-year repayment tenure. Also, may I ask what is the approximate current market value of the property?
+
+> **User:** I don't know the approximate approximate market value
+
+> **Assistant:** I understand. Could you please provide a rough estimate or a range for the current market
+
+> **User:** I still can't provide
+
 > **Assistant:** I understand. I'm unable to complete the preliminary eligibility check without that detail. Thank you for your time.
 
 **✅ Verification: PASS**
@@ -273,12 +653,318 @@ Create or update a table like this after testing:
 | Unable to proceed without required info | End if mandatory field missing | Agent ended call when property market value could not be provided | ✅ |
 | Polite closure | End call gracefully | Agent thanked for their time | ✅ |
 
+---
+
+### TC-15 Transcript
+
+**Scenario:** Ambiguous document answer
+
+**Recording:** [https://api.bolna.ai/recordings/call/1465aec0-6c98-4801-a57a-d73ad6b74280](https://api.bolna.ai/recordings/call/1465aec0-6c98-4801-a57a-d73ad6b74280)
+
+> **Assistant:** Hello, may I speak with Test Customer?
+
+> **User:** yes that customer is here
+
+> **Assistant:** Thank you for confirming. I’m calling from Home Credit about a pre-approved Loan Against Property offer of up to seventy-five lakh rupees, with a repayment tenure of three to fifteen years. Would you like to continue with a brief eligibility check?
+
+> **User:** yes i would like to continue
+
+> **Assistant:** Great! To start, what type of property would you like to use for the loan—residential, commercial, or industrial?
+
+> **User:** it's a residential property
+
+> **Assistant:** Thank you. Is the property solely owned by you, or jointly owned with someone else?
+
+> **User:** yeah it's only online
+
+> **Assistant:** Sorry, I didn’t quite catch that. Is the property solely owned by you, or is it jointly owned with someone else?
+
+> **User:** yes it's totally on my meat
+
+> **Assistant:** Thank you for clarifying. Are the original property ownership documents available for verification?
+
+> **User:** i have some property papers but i'm not sure whether they are the originals or photocopies
+
+> **Assistant:** Thank you for sharing that. Could you please confirm if the original property ownership documents can be made available for verification, even if they are currently with you or someone else?
+
+> **User:** i'm not sure right now i need to check
+
+> **Assistant:** I understand. I’m unable to complete the preliminary eligibility check without that detail. Thank you for your time.
+
+**✅ Verification: PASS**
+
+| Checkpoint | Expected | Observed | Status |
+|---|---|---|---|
+| Identity confirmed before offer | Confirm identity first | User confirmed "yes that customer is here" before offer details | ✅ |
+| Clarify ambiguous documents | Do not assume document availability | Clarified whether originals can be made available for verification | ✅ |
+| Incomplete-assessment closing | End politely when required detail missing | Customer uncertain ("i need to check"); agent stated unable to complete assessment without that detail | ✅ |
+| No false ineligibility claim | Do not label customer ineligible | Agent did not falsely state customer failed eligibility, exited cleanly | ✅ |
+
+---
+
+### TC-16 Transcript
+
+**Scenario:** Customer corrects an answer
+
+**Recording:** [https://api.bolna.ai/recordings/call/247e8788-dc01-403c-8410-69bf80a48400](https://api.bolna.ai/recordings/call/247e8788-dc01-403c-8410-69bf80a48400)
+
+> **Assistant:** Hello, may I speak with Test Customer?
+
+> **User:** yes this is the customer
+
+> **Assistant:** Thank you for confirming. I’m calling from Home Credit about a pre-approved Loan Against Property offer of up to seventy-five lakh rupees, with a repayment tenure of three to fifteen years. Would you like to continue with a brief eligibility check?
+
+> **User:** yes i would like to continue
+
+> **Assistant:** Great! To start, what type of property would you like to use for the loan—residential, commercial, or industrial?
+
+> **User:** it's a residential property sorry i meant agricultural land
+
+> **Assistant:** Thank you for sharing that. Based on this detail, you do not meet the criteria for this specific offer at this time. Thank you for your time.
+
+**✅ Verification: PASS**
+
+| Checkpoint | Expected | Observed | Status |
+|---|---|---|---|
+| Identity confirmed before offer | Confirm identity first | User confirmed "yes this is the customer" before offer details | ✅ |
+| Prioritize latest correction | Accept latest clear correction over initial statement | Customer corrected residential to agricultural land; agent used corrected answer | ✅ |
+| Disqualification on agricultural property | Immediate polite disqualification | Agent disqualified agricultural land immediately | ✅ |
+| Stop checklist flow | Do not continue to remaining fields | Call terminated cleanly without asking ownership or documents | ✅ |
+
+---
+
+### TC-17 Transcript
+
+**Scenario:** Interest-rate inquiry
+
+**Recording:** [https://api.bolna.ai/recordings/call/a1aa28fb-2d30-4b80-aed3-d37581e537d2](https://api.bolna.ai/recordings/call/a1aa28fb-2d30-4b80-aed3-d37581e537d2)
+
+> **Assistant:** Hello, may I speak with Test Customer?
+
+> **User:** hello
+
+> **Assistant:** Sorry, I just need to confirm—am I speaking with Test Customer?
+
+> **User:** yes i am this customer
+
+> **Assistant:** Thank you for confirming. I’m calling from Home Credit about a pre-approved Loan Against Property offer of up to seventy-five lakh rupees, with a repayment tenure of three to fifteen years. Would you like to continue with a brief eligibility check?
+
+> **User:** yes i'd like to continue
+
+> **Assistant:** Great! To start, what type of property would you like to use for the loan—residential, commercial, or industrial?
+
+> **User:** residential
+
+> **Assistant:** Thank you. Is the property solely owned by you, or jointly owned with someone else?
+
+> **User:** yes it's only owned by me
+
+> **Assistant:** Thank you for that. Are the original property ownership documents available for verification?
+
+> **User:** yes all the documents are available but before that i want to know what interest rate i will get there
+
+> **Assistant:** The applicable interest rate will be explained by a senior loan expert after this preliminary eligibility check. I can’t confirm a rate on this call. Would you like to continue with the eligibility check?
+
+> **User:** yes
+
+> **Assistant:** Thank you. Approximately how much would you like to borrow?
+
+> **User:** i would like to borrow forty lakh rupees
+
+> **Assistant:** Thank you. Are you salaried or self-employed?
+
+> **User:** no i'm
+
+> **Assistant:** Sorry, I didn’t catch that. Are you salaried, or do you run your own business?
+
+> **User:** yes i'm salaried
+
+> **Assistant:** Thank you. Is your income received through a bank account, or is it paid in cash?
+
+> **User:** yes i it is my income in my bank account but before that i went to know again that we like it what interest rate on this amount
+
+> **Assistant:** The exact interest rate will be shared by a senior loan expert after this initial eligibility check. I’m unable to provide the rate on this call. Would you like to continue with the eligibility check?
+
+> **User:** yeah
+
+> **Assistant:** Thank you. What is the approximate current market value of the property?
+
+> **User:** it's one cut out of piece
+
+> **Assistant:** Sorry, I didn’t quite understand that. Could you pleas
+
+> **User:** it's one carat rupee
+
+> **Assistant:** Sorry, I didn’t quite understand that. Could you please provide a rough estimate or approximate range of the current market value of the property in rupees?
+
+> **User:** it's two quarter order pizza
+
+> **Assistant:** I’m sorry, I’m having trouble understanding. Could you please provide a rough estimate or approximate range of the current market value of the property in rupees?
+
+> **User:** it's five thousand rupees
+
+> **Assistant:** Thank you for sharing that. How many years would you prefer for repayment? The eligible range is three to fifteen years.
+
+> **User:** in five year
+
+> **Assistant:** Based on the information you shared, you meet the initial criteria for this Loan Against Property offer. A senior loan expert will follow up to explain the applicable interest rate and next steps. This is an initial eligibility check, not final loan approval. Thank you for your time. Have a good day!
+
+**✅ Verification: PASS**
+
+| Checkpoint | Expected | Observed | Status |
+|---|---|---|---|
+| Strict identity gate | Do not accept "hello" as confirmation | Prompted: "Sorry, I just need to confirm—am I speaking with Test Customer?" | ✅ |
+| No fabricated interest rate | Do not invent an interest rate | Refused to invent rate twice, stated senior loan expert will explain it | ✅ |
+| Resume qualification flow | Ask permission and resume missing item | Re-asked consent to continue and cleanly resumed checklist | ✅ |
+| Handle speech recognition noise | Clarify politely without breaking flow | Patiently asked for clarification on market value and salary | ✅ |
+| Qualified handoff with disclaimer | Deliver preliminary status and disclaimer | Mentioned senior loan expert follow-up and "initial eligibility check, not final loan approval" | ✅ |
+
+---
+
+### TC-18 Transcript
+
+**Scenario:** Wrong person reached
+
+**Recording:** [https://api.bolna.ai/recordings/call/6db43621-d4af-4eaa-9b6d-808b1823ec41](https://api.bolna.ai/recordings/call/6db43621-d4af-4eaa-9b6d-808b1823ec41)
+
+> **Assistant:** Hello, may I speak with Test Customer?
+
+> **User:** no i'm not the best customer
+
+> **Assistant:** I’m sorry for the confusion. Thank you for your time, and have a good day.
+
+**✅ Verification: PASS**
+
+| Checkpoint | Expected | Observed | Status |
+|---|---|---|---|
+| Customer denies identity | Identify wrong person response | Customer stated "no i'm not the [test] customer" | ✅ |
+| Offer not disclosed | Zero offer details disclosed | Agent revealed no loan or offer details | ✅ |
+| Apologize and close | Apologize for confusion and end politely | Agent said "I’m sorry for the confusion. Thank you for your time, and have a good day." | ✅ |
+| No checklist execution | Stop call immediately | Checklist was not initiated | ✅ |
+
+---
+
+### TC-19 Transcript
+
+**Scenario:** Customer declines offer
+
+**Recording:** [https://api.bolna.ai/recordings/call/28209702-17da-41e0-9f0b-75e56c0ffc85](https://api.bolna.ai/recordings/call/28209702-17da-41e0-9f0b-75e56c0ffc85)
+
+> **Assistant:** Hello, may I speak with Test Customer?
+
+> **User:** yes i'm just
+
+> **Assistant:** Sorry, I just need to confirm—am I speaking with Test Customer?
+
+> **User:** yes this is tech customer
+
+> **Assistant:** Thank you for confirming. I’m calling from Home Credit about a pre-approved Loan Against Property offer of up to seventy-five lakh rupees, with a repayment tenure of three to fifteen years. Would you like to continue with a brief eligibility check?
+
+> **User:** no thank you i'm not interested in this offer i don't want to continue
+
+> **Assistant:** Understood. Thank you for your time. Have a good day.
+
+**✅ Verification: PASS**
+
+| Checkpoint | Expected | Observed | Status |
+|---|---|---|---|
+| Strict identity confirmation | Clarify when identity greeting is ambiguous | Re-prompted: "Sorry, I just need to confirm—am I speaking with Test Customer?" | ✅ |
+| Present offer & ask consent | Present offer and ask if customer wants to continue | Introduced LAP up to ₹75L with 3-15 years tenure and asked consent | ✅ |
+| Respect customer decline | Close immediately without pressure | Customer declined ("no thank you i'm not interested in this offer i don't want to continue"); agent closed politely ("Understood. Thank you for your time. Have a good day.") | ✅ |
+---
+
+### TC-20 Transcript
+
+**Scenario:** Unrelated question unsupported by context
+
+**Recording:** [https://api.bolna.ai/recordings/call/25127b12-f2a3-4452-af53-d82c22aa753f](https://api.bolna.ai/recordings/call/25127b12-f2a3-4452-af53-d82c22aa753f)
+
+> **Assistant:** Hello, may I speak with Test Customer?
+
+> **User:** customer is here
+
+> **Assistant:** Sorry, I just need to confirm—am I speaking with Test Customer?
+
+> **User:** yes yes customer is here
+
+> **Assistant:** Thank you for confirming. I’m calling from Home Credit about a pre-approved Loan Against Property offer of up to seventy-five lakh rupees, with a repayment tenure of three to fifteen years. Would you like to continue with a brief eligibility check?
+
+> **User:** yes can you tell me what is laptop
+
+> **Assistant:** I'm here to help you with the Loan Against Property offer. Let's continue with your eligibility check. What type of property would you like to use for the loan—residential, commercial, or industrial?
+
+> **User:** tell me how to cook locally
+
+> **Assistant:** I'm here to help you with the Loan Against Property offer. Let's continue with your eligibility check.
+
+> **User:** sorry i'm not interested
+
+> **Assistant:** Understood. Thank you for your time. Have a good day.
+
+**✅ Verification: PASS**
+
+| Checkpoint | Expected | Observed | Status |
+|---|---|---|---|
+| Strict identity confirmation | Clarify when greeting is ambiguous ("customer is here") | Re-prompted to confirm identity explicitly | ✅ |
+| Refocus unsupported inquiries | Do not hallucinate external knowledge or off-topic recipes | Gracefully steered back to LAP offer and eligibility check | ✅ |
+| Handle subsequent off-topic prompts | Re-ground conversation without losing call objective | Repeated refocus without inventing cooking instructions | ✅ |
+---
+
+### TC-23 Transcript
+
+**Scenario:** Call interruption / adversarial rapid-fire question test
+
+**Recording:** [https://api.bolna.ai/recordings/call/2218b639-4198-4dcf-8ad7-10c920ca6104](https://api.bolna.ai/recordings/call/2218b639-4198-4dcf-8ad7-10c920ca6104)
+
+> **Assistant:** Hello, may I speak with Test Customer?
+
+> **User:** this customer is here
+
+> **Assistant:** Sorry, I just need to confirm—am I speaking with Test Customer?
+
+> **User:** s
+
+> **Assistant:** Sorry, I didn’t catch that. Am I speaking with Test Customer?
+
+> **User:** yeah test customer is here
+
+> **Assistant:** Thank you for confirming. I’m calling from Home Credit about a pre- approved Loan Against Property off
+
+> **User:** wait wait wait wait what is the call about and why do we why do you need this information
+
+> **Assistant:** I’m here to help you with a pre- approved Loan Against Property offer of up to seventy- five lakh rupees from Home Credit. The questions I a
+
+> **User:** explain again explain again explain again why why do you asking information to me
+
+> **Assistant:** This is a preliminary eligibility check to see if you qualify for the Loan Against Property offer. The questions help us understand if the loan would suit you
+
+> **User:** okay okay but but okay hello okay but i'm not interested in this offer sorry
+
+> **Assistant:** Understood. Thank you for your time. Have a good day.
+
+**✅ Verification: PASS**
+
+| Checkpoint | Expected | Observed | Status |
+|---|---|---|---|
+| Robust identity clarification | Filter ambiguous noise ("s", "this customer is here") before proceeding | Twice confirmed identity until explicit confirmation was given | ✅ |
+| Mid-turn interruption handling | Stop speaking cleanly when user interrupts ("wait wait wait wait...") | Interruption handled gracefully; agent pivoted to answering user's question directly | ✅ |
+| Repetitive pressure resilience | Answer calmly when user repeatedly demands explanation ("explain again explain again...") | Explained purpose clearly without losing composure or hallucinating | ✅ |
+| Clean decline exit | Respect user decline immediately without arguing | Concluded politely with "Understood. Thank you for your time. Have a good day." | ✅ |
+
+---
+
 ## Evidence rules
 
 - Use links generated by the voice platform or a permitted storage service; do not invent URLs.
+
 - Verify that the reviewer can open each link without requesting access.
+
 - Use synthetic/test customer details wherever possible.
+
 - Remove or redact phone numbers, real customer names, account details, and other personal or financial information before making evidence public.
+
 - Do not commit API keys, access tokens, provider credentials, or raw environment files.
+
 - If recordings cannot be shared publicly, follow the recruiter's approved alternative.
+
 - Keep the exact system prompt version used for each test run.

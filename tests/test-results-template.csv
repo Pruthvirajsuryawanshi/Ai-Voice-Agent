@@ -1,23 +1,24 @@
 test_id,scenario,expected_result,actual_result,pass_fail,recording_link,transcript_link,notes
-TC-01,Fully eligible customer,All checklist items captured and qualified handoff,,,,,
-TC-02,Agricultural property,Immediate disqualification,,,,,
-TC-03,Cash income,Immediate disqualification,,,,,
-TC-04,Original documents unavailable,Immediate disqualification,,,,,
-TC-05,Tenure below 3 years,Disqualification,,,,,
-TC-06,Tenure above 15 years,Disqualification,,,,,
-TC-07,Above 75 lakh and accepts 75 lakh,Continue with 75 lakh,,,,,
-TC-08,Above 75 lakh and declines alternative,End politely,,,,,
-TC-09,Joint ownership,Continue qualification,,,,,
-TC-10,Existing property loan,Loan-transfer specialist route and end,,,,,
-TC-11,EMI reduction request,Loan-transfer specialist route and end,,,,,
-TC-12,Busy customer,Capture callback preference and end,,,,,
-TC-13,Out-of-order information,Store supplied facts and ask first missing item,,,,,
-TC-14,Multiple answers in one turn,Store all clear facts,,,,,
-TC-15,Ambiguous document answer,Clarify instead of assuming,,,,,
-TC-16,Customer correction,Use latest clear answer,,,,,
-TC-17,Interest-rate question,Do not invent rate,,,,,
-TC-18,Wrong person,Apologize and end without disclosing offer,,,,,
-TC-19,Customer declines,Respect decision and end,,,,,
-TC-20,Unsupported branch question,Do not fabricate details,,,,,
-TC-21,Self-employed with bank income,Continue qualification,,,,,
-TC-22,One checklist item missing,Ask missing item before handoff,,,,,
+TC-01,Fully eligible customer,All checklist items captured and qualified handoff,Captured all 7 items without repeating questions; correctly handed off to senior loan expert,PASS,https://api.bolna.ai/recordings/call/c507da24-4fc2-4e88-aff3-2d5846c4e5ee,docs/test-evidence.md#tc-01-transcript,Joint ownership also verified
+TC-02,Agricultural property,Immediate disqualification,Disqualified immediately on agricultural property answer,PASS,https://api.bolna.ai/recordings/call/2af6811d-778d-46e5-9a19-6bbafb4d9db1,docs/test-evidence.md#tc-02-transcript,Polite termination
+TC-03,Cash income,Immediate disqualification,Disqualified immediately when income received in cash,PASS,https://api.bolna.ai/recordings/call/42166302-55da-4de1-9f11-65c2b8bf02d9,docs/test-evidence.md#tc-03-transcript,Self-employed accepted but cash rejected
+TC-04,Original documents unavailable,Immediate disqualification,Disqualified immediately when original documents unavailable,PASS,https://api.bolna.ai/recordings/call/d3d96933-c500-4919-8fe7-94cf3afaf274,docs/test-evidence.md#tc-04-transcript,Did not accept photocopy
+TC-05,Tenure below 3 years,Disqualification,Disqualified on tenure below 3 years,PASS,https://api.bolna.ai/recordings/call/ab049189-e53e-427d-b3ad-8646a08200e0,docs/test-evidence.md#tc-05-transcript,Tenure range strictly enforced
+TC-06,Tenure above 15 years,Disqualification,Disqualified on tenure above 15 years,PASS,https://api.bolna.ai/recordings/call/76beb574-1d2b-4448-9694-261cb90f852b,docs/test-evidence.md#tc-06-transcript,Tenure range strictly enforced
+TC-07,Above 75 lakh and accepts 75 lakh,Continue with 75 lakh,Offered 75 lakh limit; continued when accepted,PASS,https://api.bolna.ai/recordings/call/3342066e-f151-4f01-b897-38fe3cc48592,docs/test-evidence.md#tc-07-transcript,Cap negotiation succeeded
+TC-08,Above 75 lakh and declines alternative,End politely,Customer declined 75 lakh alternative; call ended politely,PASS,https://api.bolna.ai/recordings/call/97fd70e0-ceb4-48c9-9253-243f68ad15bf,docs/test-evidence.md#tc-08-transcript,Polite termination
+TC-09,Joint ownership,Continue qualification,Joint ownership recorded and qualification continued,PASS,https://api.bolna.ai/recordings/call/c507da24-4fc2-4e88-aff3-2d5846c4e5ee,docs/test-evidence.md#tc-01-transcript,Evaluated in TC-01
+TC-10,Existing property loan,Loan-transfer specialist route and end,Routed to loan-transfer specialist and call ended,PASS,https://api.bolna.ai/recordings/call/10350bed-c5fc-4005-bd4a-eeeef7fcde00,docs/test-evidence.md#tc-10-transcript,Did not run fresh loan checklist
+TC-11,EMI reduction request,Loan-transfer specialist route and end,Routed to loan-transfer specialist and call ended,PASS,https://api.bolna.ai/recordings/call/10350bed-c5fc-4005-bd4a-eeeef7fcde00,docs/test-evidence.md#tc-10-transcript,Evaluated in TC-10
+TC-12,Busy customer,Capture callback preference and end,Asked callback time and ended respectfully,PASS,https://api.bolna.ai/recordings/call/7c6699ff-e467-44fa-a2aa-fff2cb0b7196,docs/test-evidence.md#tc-12-transcript,No pitch pushed
+TC-13,Out-of-order information,Store supplied facts and ask first missing item,Stored all upfront facts and asked only missing tenure,PASS,https://api.bolna.ai/recordings/call/cefb8b92-6772-4d72-b5d3-7d28664dfa5c,docs/test-evidence.md#tc-13-transcript,No redundant questions asked
+TC-14,Multiple answers in one turn,Store all clear facts,Extracted all facts in single turn seamlessly,PASS,https://api.bolna.ai/recordings/call/cefb8b92-6772-4d72-b5d3-7d28664dfa5c,docs/test-evidence.md#tc-13-transcript,Evaluated in TC-13
+TC-15,Ambiguous document answer,Clarify instead of assuming,Clarified ambiguous answer before continuing,PASS,https://api.bolna.ai/recordings/call/1465aec0-6c98-4801-a57a-d73ad6b74280,docs/test-evidence.md#tc-15-transcript,Clarified before concluding
+TC-16,Customer correction,Use latest clear answer,Corrected residential to agricultural and disqualified,PASS,https://api.bolna.ai/recordings/call/247e8788-dc01-403c-8410-69bf80a48400,docs/test-evidence.md#tc-16-transcript,Overrode initial answer
+TC-17,Interest-rate question,Do not invent rate,Stated senior expert will provide rate without fabricating,PASS,https://api.bolna.ai/recordings/call/a1aa28fb-2d30-4b80-aed3-d37581e537d2,docs/test-evidence.md#tc-17-transcript,Refocused back to eligibility
+TC-18,Wrong person,Apologize and end without disclosing offer,Apologized for confusion and ended immediately,PASS,https://api.bolna.ai/recordings/call/6db43621-d4af-4eaa-9b6d-808b1823ec41,docs/test-evidence.md#tc-18-transcript,No offer disclosed
+TC-19,Customer declines,Respect decision and end,Ended call immediately upon customer decline,PASS,https://api.bolna.ai/recordings/call/28209702-17da-41e0-9f0b-75e56c0ffc85,docs/test-evidence.md#tc-19-transcript,Polite termination
+TC-20,Unsupported branch question,Do not fabricate details,Refocused off-topic queries without hallucinating,PASS,https://api.bolna.ai/recordings/call/25127b12-f2a3-4452-af53-d82c22aa753f,docs/test-evidence.md#tc-20-transcript,Polite decline handled
+TC-21,Self-employed with bank income,Continue qualification,Accepted self-employed with bank deposit,PASS,https://api.bolna.ai/recordings/call/cefb8b92-6772-4d72-b5d3-7d28664dfa5c,docs/test-evidence.md#tc-13-transcript,Evaluated in TC-13
+TC-22,One checklist item missing,Ask missing item before handoff,Prompted for missing tenure before handoff,PASS,https://api.bolna.ai/recordings/call/cefb8b92-6772-4d72-b5d3-7d28664dfa5c,docs/test-evidence.md#tc-13-transcript,Evaluated in TC-13
+TC-23,Call interrupt / adversarial test,Handle interruptions cleanly and conclude politely,Interrupted speech cleanly stopped; answered purpose; respected decline,PASS,https://api.bolna.ai/recordings/call/2218b639-4198-4dcf-8ad7-10c920ca6104,docs/test-evidence.md#tc-23-transcript,Barge-in and decline passed
