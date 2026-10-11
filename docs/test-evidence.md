@@ -26,6 +26,7 @@ This document records the observed behavior from Bolna test calls. The results a
 | TC-20 | Unrelated question unsupported | [Recording](https://api.bolna.ai/recordings/call/25127b12-f2a3-4452-af53-d82c22aa753f) | [Transcript](#tc-20-transcript) | **PASS** |
 | TC-21 | Self-employed with bank income | [Same recording as TC-13](https://api.bolna.ai/recordings/call/cefb8b92-6772-4d72-b5d3-7d28664dfa5c) | [Transcript evidence](#tc-13-transcript) | **PASS** |
 | TC-22 | Missing item before handoff | [Same recording as TC-13](https://api.bolna.ai/recordings/call/cefb8b92-6772-4d72-b5d3-7d28664dfa5c) | [Transcript evidence](#tc-13-transcript) | **PASS** |
+| TC-23 | Call interrupt / adversarial test | [Recording](https://api.bolna.ai/recordings/call/2218b639-4198-4dcf-8ad7-10c920ca6104) | [Transcript](#tc-23-transcript) | **PASS** |
 
 ---
 
@@ -907,7 +908,48 @@ This document records the observed behavior from Bolna test calls. The results a
 | Strict identity confirmation | Clarify when greeting is ambiguous ("customer is here") | Re-prompted to confirm identity explicitly | ✅ |
 | Refocus unsupported inquiries | Do not hallucinate external knowledge or off-topic recipes | Gracefully steered back to LAP offer and eligibility check | ✅ |
 | Handle subsequent off-topic prompts | Re-ground conversation without losing call objective | Repeated refocus without inventing cooking instructions | ✅ |
-| Respect polite decline | End call courteously when customer declines | Ended with "Understood. Thank you for your time. Have a good day." | ✅ |
+---
+
+### TC-23 Transcript
+
+**Scenario:** Call interruption / adversarial rapid-fire question test
+
+**Recording:** [https://api.bolna.ai/recordings/call/2218b639-4198-4dcf-8ad7-10c920ca6104](https://api.bolna.ai/recordings/call/2218b639-4198-4dcf-8ad7-10c920ca6104)
+
+> **Assistant:** Hello, may I speak with Test Customer?
+
+> **User:** this customer is here
+
+> **Assistant:** Sorry, I just need to confirm—am I speaking with Test Customer?
+
+> **User:** s
+
+> **Assistant:** Sorry, I didn’t catch that. Am I speaking with Test Customer?
+
+> **User:** yeah test customer is here
+
+> **Assistant:** Thank you for confirming. I’m calling from Home Credit about a pre- approved Loan Against Property off
+
+> **User:** wait wait wait wait what is the call about and why do we why do you need this information
+
+> **Assistant:** I’m here to help you with a pre- approved Loan Against Property offer of up to seventy- five lakh rupees from Home Credit. The questions I a
+
+> **User:** explain again explain again explain again why why do you asking information to me
+
+> **Assistant:** This is a preliminary eligibility check to see if you qualify for the Loan Against Property offer. The questions help us understand if the loan would suit you
+
+> **User:** okay okay but but okay hello okay but i'm not interested in this offer sorry
+
+> **Assistant:** Understood. Thank you for your time. Have a good day.
+
+**✅ Verification: PASS**
+
+| Checkpoint | Expected | Observed | Status |
+|---|---|---|---|
+| Robust identity clarification | Filter ambiguous noise ("s", "this customer is here") before proceeding | Twice confirmed identity until explicit confirmation was given | ✅ |
+| Mid-turn interruption handling | Stop speaking cleanly when user interrupts ("wait wait wait wait...") | Interruption handled gracefully; agent pivoted to answering user's question directly | ✅ |
+| Repetitive pressure resilience | Answer calmly when user repeatedly demands explanation ("explain again explain again...") | Explained purpose clearly without losing composure or hallucinating | ✅ |
+| Clean decline exit | Respect user decline immediately without arguing | Concluded politely with "Understood. Thank you for your time. Have a good day." | ✅ |
 
 ---
 

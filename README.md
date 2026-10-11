@@ -55,7 +55,7 @@ Detailed transcripts and notes are in [`docs/test-evidence.md`](docs/test-eviden
 | TC-20 | Unrelated question unsupported | [Recording](https://api.bolna.ai/recordings/call/25127b12-f2a3-4452-af53-d82c22aa753f) | [Transcript](docs/test-evidence.md#tc-20-transcript) | **PASS** |
 | TC-21 | Self-employed with bank income | [Same recording as TC-13](https://api.bolna.ai/recordings/call/cefb8b92-6772-4d72-b5d3-7d28664dfa5c) | [Transcript](docs/test-evidence.md#tc-13-transcript) | **PASS** |
 | TC-22 | Missing item before handoff | [Same recording as TC-13](https://api.bolna.ai/recordings/call/cefb8b92-6772-4d72-b5d3-7d28664dfa5c) | [Transcript](docs/test-evidence.md#tc-13-transcript) | **PASS** |
-| TC-23 | Call interrupt / adversarial test | — | — | **NOT TESTED** |
+| TC-23 | Call interrupt / adversarial test | [Recording](https://api.bolna.ai/recordings/call/2218b639-4198-4dcf-8ad7-10c920ca6104) | [Transcript](docs/test-evidence.md#tc-23-transcript) | **PASS** |
 
 ## Platform and configuration
 
