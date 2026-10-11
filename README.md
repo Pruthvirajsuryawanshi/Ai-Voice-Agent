@@ -31,16 +31,31 @@ A Bolna-based AI voice-agent prototype for the SalesAgents AI Intern — Prompt 
 
 Detailed transcripts and notes are in [`docs/test-evidence.md`](docs/test-evidence.md). The statuses below are based on the transcript evidence reviewed so far. A call finishing normally does not automatically mean the test passed.
 
-| Assignment Test ID | Scenario | Recording | Transcript / review | Result |
+| Test ID | Scenario | Recording | Transcript / Review | Result |
 |---|---|---|---|---|
-| TC-01 | Fully eligible customer | [Recording](https://api.bolna.ai/recordings/call/c507da24-4fc2-4e88-aff3-2d5846c4e5ee) | [Transcript and review](docs/test-evidence.md#tc-01-transcript) | **PASS** — identity confirmed, all 7 checklist items collected, STT noise handled cleanly, and qualified handoff. |
-| TC-02 | Agricultural property | [Recording](https://api.bolna.ai/recordings/call/2af6811d-778d-46e5-9a19-6bbafb4d9db1) | [Transcript and review](docs/test-evidence.md#tc-02-transcript) | **PASS** |
-| TC-03 | Cash income | [Recording](https://api.bolna.ai/recordings/call/42166302-55da-4de1-9f11-65c2b8bf02d9) | [Transcript and review](docs/test-evidence.md#tc-03-transcript) | **PASS** |
-| TC-07 | Amount above ₹75 lakh | [Recording](https://api.bolna.ai/recordings/call/3342066e-f151-4f01-b897-38fe3cc48592) | [Transcript and review](docs/test-evidence.md#tc-07-transcript) | **NEEDS REVIEW** — confirm the customer's acceptance from audio because the transcript says “seventy five rupees.” |
-| TC-10 | Existing property loan | [Recording](https://api.bolna.ai/recordings/call/10350bed-c5fc-4005-bd4a-eeeef7fcde00) | [Transcript and review](docs/test-evidence.md#tc-10-transcript) | **PASS** — customer mentioned existing loan and EMI reduction; agent correctly routed to loan-transfer specialist without continuing fresh checklist. |
-| TC-12 | Busy customer | [Recording](https://api.bolna.ai/recordings/call/7c6699ff-e467-44fa-a2aa-fff2cb0b7196) | [Transcript and review](docs/test-evidence.md#tc-12-transcript) | **PASS** |
-| TC-13 | Out-of-order information | [Recording](https://api.bolna.ai/recordings/call/cefb8b92-6772-4d72-b5d3-7d28664dfa5c) | [Transcript and review](docs/test-evidence.md#tc-13-transcript) | **PASS** |
-| TC-22 | Missing item before handoff | [Same recording as TC-13](https://api.bolna.ai/recordings/call/cefb8b92-6772-4d72-b5d3-7d28664dfa5c) | [Transcript and review](docs/test-evidence.md#tc-13-transcript) | **PASS** — the agent did not confirm eligibility when property market value was missing. |
+| TC-01 | Fully eligible customer | [Recording](https://api.bolna.ai/recordings/call/c507da24-4fc2-4e88-aff3-2d5846c4e5ee) | [Transcript](docs/test-evidence.md#tc-01-transcript) | **PASS** |
+| TC-02 | Agricultural property | [Recording](https://api.bolna.ai/recordings/call/2af6811d-778d-46e5-9a19-6bbafb4d9db1) | [Transcript](docs/test-evidence.md#tc-02-transcript) | **PASS** |
+| TC-03 | Cash income | [Recording](https://api.bolna.ai/recordings/call/42166302-55da-4de1-9f11-65c2b8bf02d9) | [Transcript](docs/test-evidence.md#tc-03-transcript) | **PASS** |
+| TC-04 | Original documents unavailable | — | — | **NOT TESTED** |
+| TC-05 | Tenure below 3 years | — | — | **NOT TESTED** |
+| TC-06 | Tenure above 15 years | — | — | **NOT TESTED** |
+| TC-07 | Amount above ₹75 lakh | [Recording](https://api.bolna.ai/recordings/call/3342066e-f151-4f01-b897-38fe3cc48592) | [Transcript](docs/test-evidence.md#tc-07-transcript) | **PASS** |
+| TC-08 | Amount above limit & customer declines | — | — | **NOT TESTED** |
+| TC-09 | Joint ownership | — | — | **NOT TESTED** |
+| TC-10 | Existing property loan | [Recording](https://api.bolna.ai/recordings/call/10350bed-c5fc-4005-bd4a-eeeef7fcde00) | [Transcript](docs/test-evidence.md#tc-10-transcript) | **PASS** |
+| TC-11 | EMI reduction request | [Recording](https://api.bolna.ai/recordings/call/10350bed-c5fc-4005-bd4a-eeeef7fcde00) | [Transcript](docs/test-evidence.md#tc-10-transcript) | **PASS** |
+| TC-12 | Busy customer | [Recording](https://api.bolna.ai/recordings/call/7c6699ff-e467-44fa-a2aa-fff2cb0b7196) | [Transcript](docs/test-evidence.md#tc-12-transcript) | **PASS** |
+| TC-13 | Out-of-order information | [Recording](https://api.bolna.ai/recordings/call/cefb8b92-6772-4d72-b5d3-7d28664dfa5c) | [Transcript](docs/test-evidence.md#tc-13-transcript) | **PASS** |
+| TC-14 | Multiple answers in one turn | — | — | **NOT TESTED** |
+| TC-15 | Ambiguous document answer | — | — | **NOT TESTED** |
+| TC-16 | Customer correction | — | — | **NOT TESTED** |
+| TC-17 | Interest-rate inquiry | — | — | **NOT TESTED** |
+| TC-18 | Wrong person reached | — | — | **NOT TESTED** |
+| TC-19 | Customer declines offer | — | — | **NOT TESTED** |
+| TC-20 | Unrelated branch inquiry | — | — | **NOT TESTED** |
+| TC-21 | Self-employed with bank income | — | — | **NOT TESTED** |
+| TC-22 | Missing item before handoff | [Recording](https://api.bolna.ai/recordings/call/cefb8b92-6772-4d72-b5d3-7d28664dfa5c) | [Transcript](docs/test-evidence.md#tc-13-transcript) | **PASS** |
+| TC-23 | Call interrupt / adversarial test | — | — | **NOT TESTED** |
 
 ## Platform and configuration
 
