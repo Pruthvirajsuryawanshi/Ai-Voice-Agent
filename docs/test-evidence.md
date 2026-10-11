@@ -8,6 +8,7 @@ This document records the observed behavior from Bolna test calls. The results a
 | TC-02 | Agricultural property | [Recording](https://api.bolna.ai/recordings/call/2af6811d-778d-46e5-9a19-6bbafb4d9db1) | [Transcript](#tc-02-transcript) | **PASS** |
 | TC-03 | Cash income | [Recording](https://api.bolna.ai/recordings/call/42166302-55da-4de1-9f11-65c2b8bf02d9) | [Transcript](#tc-03-transcript) | **PASS** |
 | TC-04 | Original documents unavailable | [Recording](https://api.bolna.ai/recordings/call/d3d96933-c500-4919-8fe7-94cf3afaf274) | [Transcript](#tc-04-transcript) | **PASS** |
+| TC-05 | Tenure below 3 years | [Recording](https://api.bolna.ai/recordings/call/ab049189-e53e-427d-b3ad-8646a08200e0) | [Transcript](#tc-05-transcript) | **PASS** |
 | TC-07 | Amount above ₹75 lakh | [Recording](https://api.bolna.ai/recordings/call/3342066e-f151-4f01-b897-38fe3cc48592) | [Transcript](#tc-07-transcript) | **PASS** |
 | TC-09 | Joint ownership | [Same recording as TC-01](https://api.bolna.ai/recordings/call/c507da24-4fc2-4e88-aff3-2d5846c4e5ee) | [Transcript evidence](#tc-01-transcript) | **PASS** |
 | TC-10 | Existing property loan | [Recording](https://api.bolna.ai/recordings/call/10350bed-c5fc-4005-bd4a-eeeef7fcde00) | [Transcript](#tc-10-transcript) | **PASS** |
@@ -235,6 +236,72 @@ This document records the observed behavior from Bolna test calls. The results a
 | Documents criterion check | Original documents required | Customer stated only photocopies available, originals unavailable | ✅ |
 | Immediate polite disqualification | Stop checklist upon disqualifying criterion | Agent stated criteria not met for this specific offer and ended immediately | ✅ |
 | No further questions asked | Do not ask amount/income/tenure | Call terminated cleanly without asking remaining checklist fields | ✅ |
+
+---
+
+### TC-05 Transcript
+
+**Scenario:** Tenure below 3 years
+
+**Recording:** [https://api.bolna.ai/recordings/call/ab049189-e53e-427d-b3ad-8646a08200e0](https://api.bolna.ai/recordings/call/ab049189-e53e-427d-b3ad-8646a08200e0)
+
+> **Assistant:** Hello, may I speak with Test Customer?
+
+> **User:** yes i'm the test customer
+
+> **Assistant:** Thank you for confirming. I’m calling from Home Credit about a pre-approved Loan Against Property offer of up to seventy-five lakh rupees, with a repayment tenure of three to fifteen years. Would you like to continue with a brief eligibility check?
+
+> **User:** yes i would like to continue until the residential property is solely owned by me and i have all original documents i made and i am self employed my income is deposited into my bank account
+
+> **Assistant:** Thank you for sharing that information. To begin, could you please confirm what type of property would you like to use for the loan—residential, commercial, or industrial?
+
+> **User:** it's residential property
+
+> **Assistant:** Thank you. Is the property solely owned by you, or is it jointly owned with someone else?
+
+> **User:** yeah it's only on money
+
+> **Assistant:** Thank you for confirming that the property is solely owned by you. Are the original property ownership documents available for verification?
+
+> **User:** yes i have all the original documents available
+
+> **Assistant:** Approximately how much would you like to borrow?
+
+> **User:** i need portal like rupees
+
+> **Assistant:** Sorry, I didn’t catch that. Could you please tell me
+
+> **User:** i need forty lakh rupees
+
+> **Assistant:** Thank you. Are you salaried or self-employed?
+
+> **User:** i am salaried
+
+> **Assistant:** Is your income received through a bank account, or is it paid in cash?
+
+> **User:** yes my income is deposited into my bank account
+
+> **Assistant:** What is the approximate current market value of the property?
+
+> **User:** eight lakh rupees
+
+> **Assistant:** Thank you for sharing that. How many years would you prefer for repayment? The eligible range i
+
+> **User:** i want to repeat it
+
+> **User:** i want to repay the loan in two years
+
+> **Assistant:** The repayment tenure for this loan offer is between three to fifteen years. Since two years is below the minimum, I’m sorry, but you do not meet the criteria for this specific offer at this time. Thank you for your time.
+
+**✅ Verification: PASS**
+
+| Checkpoint | Expected | Observed | Status |
+|---|---|---|---|
+| Identity confirmed before offer | Confirm identity first | User confirmed "yes i'm the test customer" before offer details | ✅ |
+| Checklist items collected | Capture items 1 through 6 | Collected: residential, sole ownership, original docs available, ₹40L, salaried, bank income, ₹8L market value | ✅ |
+| Tenure minimum enforced (≥ 3 yrs) | Reject tenure < 3 years | Customer requested 2 years; agent stated 3-15 years eligible range and that 2 years is below minimum | ✅ |
+| Polite rejection & closing | Explain rule and end call | Agent stated criteria not met for this specific offer and ended call politely | ✅ |
+| No false qualification | Do not hand off as eligible | Disqualified cleanly on explicit criterion failure | ✅ |
 
 ---
 
