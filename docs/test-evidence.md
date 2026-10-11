@@ -19,6 +19,7 @@ This document records the observed behavior from Bolna test calls. The results a
 | TC-13 | Out-of-order information | [Recording](https://api.bolna.ai/recordings/call/cefb8b92-6772-4d72-b5d3-7d28664dfa5c) | [Transcript](#tc-13-transcript) | **PASS** |
 | TC-14 | Multiple answers in one turn | [Same recording as TC-13](https://api.bolna.ai/recordings/call/cefb8b92-6772-4d72-b5d3-7d28664dfa5c) | [Transcript evidence](#tc-13-transcript) | **PASS** |
 | TC-15 | Ambiguous document answer | [Recording](https://api.bolna.ai/recordings/call/1465aec0-6c98-4801-a57a-d73ad6b74280) | [Transcript](#tc-15-transcript) | **PASS** |
+| TC-16 | Customer correction | [Recording](https://api.bolna.ai/recordings/call/247e8788-dc01-403c-8410-69bf80a48400) | [Transcript](#tc-16-transcript) | **PASS** |
 | TC-17 | Interest-rate question | [Recording](https://api.bolna.ai/recordings/call/a1aa28fb-2d30-4b80-aed3-d37581e537d2) | [Transcript](#tc-17-transcript) | **PASS** |
 | TC-18 | Wrong person | [Recording](https://api.bolna.ai/recordings/call/6db43621-d4af-4eaa-9b6d-808b1823ec41) | [Transcript](#tc-18-transcript) | **PASS** |
 | TC-21 | Self-employed with bank income | [Same recording as TC-13](https://api.bolna.ai/recordings/call/cefb8b92-6772-4d72-b5d3-7d28664dfa5c) | [Transcript evidence](#tc-13-transcript) | **PASS** |
@@ -695,6 +696,37 @@ This document records the observed behavior from Bolna test calls. The results a
 | Clarify ambiguous documents | Do not assume document availability | Clarified whether originals can be made available for verification | ✅ |
 | Incomplete-assessment closing | End politely when required detail missing | Customer uncertain ("i need to check"); agent stated unable to complete assessment without that detail | ✅ |
 | No false ineligibility claim | Do not label customer ineligible | Agent did not falsely state customer failed eligibility, exited cleanly | ✅ |
+
+---
+
+### TC-16 Transcript
+
+**Scenario:** Customer corrects an answer
+
+**Recording:** [https://api.bolna.ai/recordings/call/247e8788-dc01-403c-8410-69bf80a48400](https://api.bolna.ai/recordings/call/247e8788-dc01-403c-8410-69bf80a48400)
+
+> **Assistant:** Hello, may I speak with Test Customer?
+
+> **User:** yes this is the customer
+
+> **Assistant:** Thank you for confirming. I’m calling from Home Credit about a pre-approved Loan Against Property offer of up to seventy-five lakh rupees, with a repayment tenure of three to fifteen years. Would you like to continue with a brief eligibility check?
+
+> **User:** yes i would like to continue
+
+> **Assistant:** Great! To start, what type of property would you like to use for the loan—residential, commercial, or industrial?
+
+> **User:** it's a residential property sorry i meant agricultural land
+
+> **Assistant:** Thank you for sharing that. Based on this detail, you do not meet the criteria for this specific offer at this time. Thank you for your time.
+
+**✅ Verification: PASS**
+
+| Checkpoint | Expected | Observed | Status |
+|---|---|---|---|
+| Identity confirmed before offer | Confirm identity first | User confirmed "yes this is the customer" before offer details | ✅ |
+| Prioritize latest correction | Accept latest clear correction over initial statement | Customer corrected residential to agricultural land; agent used corrected answer | ✅ |
+| Disqualification on agricultural property | Immediate polite disqualification | Agent disqualified agricultural land immediately | ✅ |
+| Stop checklist flow | Do not continue to remaining fields | Call terminated cleanly without asking ownership or documents | ✅ |
 
 ---
 
