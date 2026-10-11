@@ -36,7 +36,7 @@ Detailed transcripts and notes are in [`docs/test-evidence.md`](docs/test-eviden
 | TC-01 | Fully eligible customer | [Recording](https://api.bolna.ai/recordings/call/c507da24-4fc2-4e88-aff3-2d5846c4e5ee) | [Transcript](docs/test-evidence.md#tc-01-transcript) | **PASS** |
 | TC-02 | Agricultural property | [Recording](https://api.bolna.ai/recordings/call/2af6811d-778d-46e5-9a19-6bbafb4d9db1) | [Transcript](docs/test-evidence.md#tc-02-transcript) | **PASS** |
 | TC-03 | Cash income | [Recording](https://api.bolna.ai/recordings/call/42166302-55da-4de1-9f11-65c2b8bf02d9) | [Transcript](docs/test-evidence.md#tc-03-transcript) | **PASS** |
-| TC-04 | Original documents unavailable | — | — | **NOT TESTED** |
+| TC-04 | Original documents unavailable | [Recording](https://api.bolna.ai/recordings/call/d3d96933-c500-4919-8fe7-94cf3afaf274) | [Transcript](docs/test-evidence.md#tc-04-transcript) | **PASS** |
 | TC-05 | Tenure below 3 years | — | — | **NOT TESTED** |
 | TC-06 | Tenure above 15 years | — | — | **NOT TESTED** |
 | TC-07 | Amount above ₹75 lakh | [Recording](https://api.bolna.ai/recordings/call/3342066e-f151-4f01-b897-38fe3cc48592) | [Transcript](docs/test-evidence.md#tc-07-transcript) | **PASS** |

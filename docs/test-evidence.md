@@ -7,6 +7,7 @@ This document records the observed behavior from Bolna test calls. The results a
 | TC-01 | Fully eligible customer | [Recording](https://api.bolna.ai/recordings/call/c507da24-4fc2-4e88-aff3-2d5846c4e5ee) | [Transcript](#tc-01-transcript) | **PASS** |
 | TC-02 | Agricultural property | [Recording](https://api.bolna.ai/recordings/call/2af6811d-778d-46e5-9a19-6bbafb4d9db1) | [Transcript](#tc-02-transcript) | **PASS** |
 | TC-03 | Cash income | [Recording](https://api.bolna.ai/recordings/call/42166302-55da-4de1-9f11-65c2b8bf02d9) | [Transcript](#tc-03-transcript) | **PASS** |
+| TC-04 | Original documents unavailable | [Recording](https://api.bolna.ai/recordings/call/d3d96933-c500-4919-8fe7-94cf3afaf274) | [Transcript](#tc-04-transcript) | **PASS** |
 | TC-07 | Amount above ₹75 lakh | [Recording](https://api.bolna.ai/recordings/call/3342066e-f151-4f01-b897-38fe3cc48592) | [Transcript](#tc-07-transcript) | **PASS** |
 | TC-09 | Joint ownership | [Same recording as TC-01](https://api.bolna.ai/recordings/call/c507da24-4fc2-4e88-aff3-2d5846c4e5ee) | [Transcript evidence](#tc-01-transcript) | **PASS** |
 | TC-10 | Existing property loan | [Recording](https://api.bolna.ai/recordings/call/10350bed-c5fc-4005-bd4a-eeeef7fcde00) | [Transcript](#tc-10-transcript) | **PASS** |
@@ -191,6 +192,49 @@ This document records the observed behavior from Bolna test calls. The results a
 | Cash income rejected | Cash-only = ineligible | User said "all my income in cash", agent correctly rejected | ✅ |
 | Polite rejection | End call gracefully | Agent thanked and ended politely | ✅ |
 | No further questions after rejection | Stop collecting info | Agent did not ask further eligibility questions | ✅ |
+
+---
+
+### TC-04 Transcript
+
+**Scenario:** Original documents unavailable
+
+**Recording:** [https://api.bolna.ai/recordings/call/d3d96933-c500-4919-8fe7-94cf3afaf274](https://api.bolna.ai/recordings/call/d3d96933-c500-4919-8fe7-94cf3afaf274)
+
+> **Assistant:** Hello, may I speak with Test Customer?
+
+> **User:** yes i am test customer
+
+> **Assistant:** Thank you for confirming. I’m calling from Home Credit about a pre-approved Loan Against Property offer of up to seventy-five lakh rupees, with a repayment tenure of three to fifteen years. Would you like to continue with a brief eligibility check?
+
+> **User:** yes i want to continue
+
+> **Assistant:** Great! To start, what type of property would you like to use for the loan—residential, commercial, or industrial?
+
+> **Assistant:** Hello, are you still on the line?
+
+> **User:** yeah residential
+
+> **Assistant:** Thank you. Is the property solely owned by you, or jointly owned with someone else?
+
+> **User:** yeah it's only on my name
+
+> **Assistant:** Are the original property ownership documents available for verification?
+
+> **User:** yes i have only the photocopies of document not the original documents are available
+
+> **Assistant:** Thank you for sharing that. Based on this detail, you do not meet the criteria for this specific offer at this time. Thank you for your time.
+
+**✅ Verification: PASS**
+
+| Checkpoint | Expected | Observed | Status |
+|---|---|---|---|
+| Identity confirmed before offer | Confirm identity first | User confirmed "yes i am test customer" before offer was revealed | ✅ |
+| Property type collected | Residential/commercial/industrial eligible | Collected: residential — eligible | ✅ |
+| Sole vs joint ownership | Ask ownership | Collected: solely owned ("only on my name") | ✅ |
+| Documents criterion check | Original documents required | Customer stated only photocopies available, originals unavailable | ✅ |
+| Immediate polite disqualification | Stop checklist upon disqualifying criterion | Agent stated criteria not met for this specific offer and ended immediately | ✅ |
+| No further questions asked | Do not ask amount/income/tenure | Call terminated cleanly without asking remaining checklist fields | ✅ |
 
 ---
 
