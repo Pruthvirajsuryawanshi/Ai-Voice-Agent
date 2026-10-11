@@ -38,7 +38,7 @@ Detailed transcripts and notes are in [`docs/test-evidence.md`](docs/test-eviden
 | TC-03 | Cash income | [Recording](https://api.bolna.ai/recordings/call/42166302-55da-4de1-9f11-65c2b8bf02d9) | [Transcript](docs/test-evidence.md#tc-03-transcript) | **PASS** |
 | TC-04 | Original documents unavailable | [Recording](https://api.bolna.ai/recordings/call/d3d96933-c500-4919-8fe7-94cf3afaf274) | [Transcript](docs/test-evidence.md#tc-04-transcript) | **PASS** |
 | TC-05 | Tenure below 3 years | [Recording](https://api.bolna.ai/recordings/call/ab049189-e53e-427d-b3ad-8646a08200e0) | [Transcript](docs/test-evidence.md#tc-05-transcript) | **PASS** |
-| TC-06 | Tenure above 15 years | — | — | **NOT TESTED** |
+| TC-06 | Tenure above 15 years | [Recording](https://api.bolna.ai/recordings/call/76beb574-1d2b-4448-9694-261cb90f852b) | [Transcript](docs/test-evidence.md#tc-06-transcript) | **PASS** |
 | TC-07 | Amount above ₹75 lakh | [Recording](https://api.bolna.ai/recordings/call/3342066e-f151-4f01-b897-38fe3cc48592) | [Transcript](docs/test-evidence.md#tc-07-transcript) | **PASS** |
 | TC-08 | Amount above limit & customer declines | — | — | **NOT TESTED** |
 | TC-09 | Joint ownership | [Same recording as TC-01](https://api.bolna.ai/recordings/call/c507da24-4fc2-4e88-aff3-2d5846c4e5ee) | [Transcript](docs/test-evidence.md#tc-01-transcript) | **PASS** |
