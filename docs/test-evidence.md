@@ -22,6 +22,7 @@ This document records the observed behavior from Bolna test calls. The results a
 | TC-16 | Customer correction | [Recording](https://api.bolna.ai/recordings/call/247e8788-dc01-403c-8410-69bf80a48400) | [Transcript](#tc-16-transcript) | **PASS** |
 | TC-17 | Interest-rate question | [Recording](https://api.bolna.ai/recordings/call/a1aa28fb-2d30-4b80-aed3-d37581e537d2) | [Transcript](#tc-17-transcript) | **PASS** |
 | TC-18 | Wrong person | [Recording](https://api.bolna.ai/recordings/call/6db43621-d4af-4eaa-9b6d-808b1823ec41) | [Transcript](#tc-18-transcript) | **PASS** |
+| TC-19 | Customer declines offer | [Recording](https://api.bolna.ai/recordings/call/28209702-17da-41e0-9f0b-75e56c0ffc85) | [Transcript](#tc-19-transcript) | **PASS** |
 | TC-21 | Self-employed with bank income | [Same recording as TC-13](https://api.bolna.ai/recordings/call/cefb8b92-6772-4d72-b5d3-7d28664dfa5c) | [Transcript evidence](#tc-13-transcript) | **PASS** |
 | TC-22 | Missing item before handoff | [Same recording as TC-13](https://api.bolna.ai/recordings/call/cefb8b92-6772-4d72-b5d3-7d28664dfa5c) | [Transcript evidence](#tc-13-transcript) | **PASS** |
 
@@ -838,6 +839,37 @@ This document records the observed behavior from Bolna test calls. The results a
 | Offer not disclosed | Zero offer details disclosed | Agent revealed no loan or offer details | ✅ |
 | Apologize and close | Apologize for confusion and end politely | Agent said "I’m sorry for the confusion. Thank you for your time, and have a good day." | ✅ |
 | No checklist execution | Stop call immediately | Checklist was not initiated | ✅ |
+
+---
+
+### TC-19 Transcript
+
+**Scenario:** Customer declines offer
+
+**Recording:** [https://api.bolna.ai/recordings/call/28209702-17da-41e0-9f0b-75e56c0ffc85](https://api.bolna.ai/recordings/call/28209702-17da-41e0-9f0b-75e56c0ffc85)
+
+> **Assistant:** Hello, may I speak with Test Customer?
+
+> **User:** yes i'm just
+
+> **Assistant:** Sorry, I just need to confirm—am I speaking with Test Customer?
+
+> **User:** yes this is tech customer
+
+> **Assistant:** Thank you for confirming. I’m calling from Home Credit about a pre-approved Loan Against Property offer of up to seventy-five lakh rupees, with a repayment tenure of three to fifteen years. Would you like to continue with a brief eligibility check?
+
+> **User:** no thank you i'm not interested in this offer i don't want to continue
+
+> **Assistant:** Understood. Thank you for your time. Have a good day.
+
+**✅ Verification: PASS**
+
+| Checkpoint | Expected | Observed | Status |
+|---|---|---|---|
+| Strict identity confirmation | Clarify when identity greeting is ambiguous | Re-prompted: "Sorry, I just need to confirm—am I speaking with Test Customer?" | ✅ |
+| Present offer & ask consent | Present offer and ask if customer wants to continue | Introduced LAP up to ₹75L with 3-15 years tenure and asked consent | ✅ |
+| Respect customer decline | Close immediately without pressure | Customer declined ("no thank you i'm not interested in this offer i don't want to continue"); agent closed politely ("Understood. Thank you for your time. Have a good day.") | ✅ |
+| No checklist initiated | Do not start qualification checklist | Did not ask any property or eligibility questions | ✅ |
 
 ---
 
