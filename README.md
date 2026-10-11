@@ -49,7 +49,7 @@ Detailed transcripts and notes are in [`docs/test-evidence.md`](docs/test-eviden
 | TC-14 | Multiple answers in one turn | [Same recording as TC-13](https://api.bolna.ai/recordings/call/cefb8b92-6772-4d72-b5d3-7d28664dfa5c) | [Transcript](docs/test-evidence.md#tc-13-transcript) | **PASS** |
 | TC-15 | Ambiguous document answer | — | — | **NOT TESTED** |
 | TC-16 | Customer correction | — | — | **NOT TESTED** |
-| TC-17 | Interest-rate inquiry | — | — | **NOT TESTED** |
+| TC-17 | Interest-rate inquiry | [Recording](https://api.bolna.ai/recordings/call/a1aa28fb-2d30-4b80-aed3-d37581e537d2) | [Transcript](docs/test-evidence.md#tc-17-transcript) | **PASS** |
 | TC-18 | Wrong person reached | [Recording](https://api.bolna.ai/recordings/call/6db43621-d4af-4eaa-9b6d-808b1823ec41) | [Transcript](docs/test-evidence.md#tc-18-transcript) | **PASS** |
 | TC-19 | Customer declines offer | — | — | **NOT TESTED** |
 | TC-20 | Unrelated branch inquiry | — | — | **NOT TESTED** |

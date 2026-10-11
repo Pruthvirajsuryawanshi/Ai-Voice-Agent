@@ -14,6 +14,7 @@ This document records the observed behavior from Bolna test calls. The results a
 | TC-12 | Busy customer | [Recording](https://api.bolna.ai/recordings/call/7c6699ff-e467-44fa-a2aa-fff2cb0b7196) | [Transcript](#tc-12-transcript) | **PASS** |
 | TC-13 | Out-of-order information | [Recording](https://api.bolna.ai/recordings/call/cefb8b92-6772-4d72-b5d3-7d28664dfa5c) | [Transcript](#tc-13-transcript) | **PASS** |
 | TC-14 | Multiple answers in one turn | [Same recording as TC-13](https://api.bolna.ai/recordings/call/cefb8b92-6772-4d72-b5d3-7d28664dfa5c) | [Transcript evidence](#tc-13-transcript) | **PASS** |
+| TC-17 | Interest-rate question | [Recording](https://api.bolna.ai/recordings/call/a1aa28fb-2d30-4b80-aed3-d37581e537d2) | [Transcript](#tc-17-transcript) | **PASS** |
 | TC-18 | Wrong person | [Recording](https://api.bolna.ai/recordings/call/6db43621-d4af-4eaa-9b6d-808b1823ec41) | [Transcript](#tc-18-transcript) | **PASS** |
 | TC-21 | Self-employed with bank income | [Same recording as TC-13](https://api.bolna.ai/recordings/call/cefb8b92-6772-4d72-b5d3-7d28664dfa5c) | [Transcript evidence](#tc-13-transcript) | **PASS** |
 | TC-22 | Missing item before handoff | [Same recording as TC-13](https://api.bolna.ai/recordings/call/cefb8b92-6772-4d72-b5d3-7d28664dfa5c) | [Transcript evidence](#tc-13-transcript) | **PASS** |
@@ -385,6 +386,94 @@ This document records the observed behavior from Bolna test calls. The results a
 | Graceful handling of unclear input | Re-ask or clarify | Agent handled repeated/unclear user input patiently | ✅ |
 | Unable to proceed without required info | End if mandatory field missing | Agent ended call when property market value could not be provided | ✅ |
 | Polite closure | End call gracefully | Agent thanked for their time | ✅ |
+
+---
+
+### TC-17 Transcript
+
+**Scenario:** Interest-rate inquiry
+
+**Recording:** [https://api.bolna.ai/recordings/call/a1aa28fb-2d30-4b80-aed3-d37581e537d2](https://api.bolna.ai/recordings/call/a1aa28fb-2d30-4b80-aed3-d37581e537d2)
+
+> **Assistant:** Hello, may I speak with Test Customer?
+
+> **User:** hello
+
+> **Assistant:** Sorry, I just need to confirm—am I speaking with Test Customer?
+
+> **User:** yes i am this customer
+
+> **Assistant:** Thank you for confirming. I’m calling from Home Credit about a pre-approved Loan Against Property offer of up to seventy-five lakh rupees, with a repayment tenure of three to fifteen years. Would you like to continue with a brief eligibility check?
+
+> **User:** yes i'd like to continue
+
+> **Assistant:** Great! To start, what type of property would you like to use for the loan—residential, commercial, or industrial?
+
+> **User:** residential
+
+> **Assistant:** Thank you. Is the property solely owned by you, or jointly owned with someone else?
+
+> **User:** yes it's only owned by me
+
+> **Assistant:** Thank you for that. Are the original property ownership documents available for verification?
+
+> **User:** yes all the documents are available but before that i want to know what interest rate i will get there
+
+> **Assistant:** The applicable interest rate will be explained by a senior loan expert after this preliminary eligibility check. I can’t confirm a rate on this call. Would you like to continue with the eligibility check?
+
+> **User:** yes
+
+> **Assistant:** Thank you. Approximately how much would you like to borrow?
+
+> **User:** i would like to borrow forty lakh rupees
+
+> **Assistant:** Thank you. Are you salaried or self-employed?
+
+> **User:** no i'm
+
+> **Assistant:** Sorry, I didn’t catch that. Are you salaried, or do you run your own business?
+
+> **User:** yes i'm salaried
+
+> **Assistant:** Thank you. Is your income received through a bank account, or is it paid in cash?
+
+> **User:** yes i it is my income in my bank account but before that i went to know again that we like it what interest rate on this amount
+
+> **Assistant:** The exact interest rate will be shared by a senior loan expert after this initial eligibility check. I’m unable to provide the rate on this call. Would you like to continue with the eligibility check?
+
+> **User:** yeah
+
+> **Assistant:** Thank you. What is the approximate current market value of the property?
+
+> **User:** it's one cut out of piece
+
+> **Assistant:** Sorry, I didn’t quite understand that. Could you pleas
+
+> **User:** it's one carat rupee
+
+> **Assistant:** Sorry, I didn’t quite understand that. Could you please provide a rough estimate or approximate range of the current market value of the property in rupees?
+
+> **User:** it's two quarter order pizza
+
+> **Assistant:** I’m sorry, I’m having trouble understanding. Could you please provide a rough estimate or approximate range of the current market value of the property in rupees?
+
+> **User:** it's five thousand rupees
+
+> **Assistant:** Thank you for sharing that. How many years would you prefer for repayment? The eligible range is three to fifteen years.
+
+> **User:** in five year
+
+> **Assistant:** Based on the information you shared, you meet the initial criteria for this Loan Against Property offer. A senior loan expert will follow up to explain the applicable interest rate and next steps. This is an initial eligibility check, not final loan approval. Thank you for your time. Have a good day!
+
+**✅ Verification: PASS**
+
+| Checkpoint | Expected | Observed | Status |
+|---|---|---|---|
+| Strict identity gate | Do not accept "hello" as confirmation | Prompted: "Sorry, I just need to confirm—am I speaking with Test Customer?" | ✅ |
+| No fabricated interest rate | Do not invent an interest rate | Refused to invent rate twice, stated senior loan expert will explain it | ✅ |
+| Resume qualification flow | Ask permission and resume missing item | Re-asked consent to continue and cleanly resumed checklist | ✅ |
+| Handle speech recognition noise | Clarify politely without breaking flow | Patiently asked for clarification on market value and salary | ✅ |
+| Qualified handoff with disclaimer | Deliver preliminary status and disclaimer | Mentioned senior loan expert follow-up and "initial eligibility check, not final loan approval" | ✅ |
 
 ---
 
