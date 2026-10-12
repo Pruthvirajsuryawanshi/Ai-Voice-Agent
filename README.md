@@ -2,6 +2,13 @@
 
 A Bolna-based AI voice-agent prototype for the SalesAgents AI Intern — Prompt Engineer assessment. The agent conducts a preliminary eligibility conversation for Home Credit's pre-approved Loan Against Property (LAP) offer of up to **₹75,00,000 (₹75 lakh)**.
 
+## 🔴 Live Demo
+
+| Resource | Link |
+|---|---|
+| 🎙️ **Published Agent (interactive)** | [▶ Try on Bolna](https://bolna.ai/a/51e47afd-72fc-402f-a90f-ffced1b71224) |
+| 🎥 **Screen Recording (sample call)** | [▶ Watch on Google Drive](https://drive.google.com/file/d/1FkqEjLVEItmkaECeFS2XY3LXX16YoF8Q/view?usp=drive_link) |
+
 > **Scope:** This is a preliminary qualification assistant, not a loan-approval system. Final approval and exact loan terms remain with the lender or senior loan expert.
 
 ## Objectives
@@ -59,7 +66,7 @@ Detailed transcripts and notes are in [`docs/test-evidence.md`](docs/test-eviden
 
 ## Platform and configuration
 
-- **Voice-agent platform:** Bolna.
+- **Voice-agent platform:** [Bolna](https://bolna.ai) — [Published agent link](https://bolna.ai/a/51e47afd-72fc-402f-a90f-ffced1b71224).
 - **Voice and transcription services:** ElevenLabs and Deepgram, as configured in Bolna.
 - **Baseline test language:** English was configured for the initial test, but the agent switched to Hindi after the user spoke Hindi. Verify language-mode behavior before claiming strict English-only control.
 - **External actions:** Callback scheduling, live transfer, CRM updates, and do-not-contact persistence must not be claimed as completed unless the configured workflow confirms them.

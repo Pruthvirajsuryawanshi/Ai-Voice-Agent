@@ -1,5 +1,10 @@
 # Detailed Test Evidence
 
+| Resource | Link |
+|---|---|
+| 🎙️ **Published Agent (interactive)** | [▶ Try on Bolna](https://bolna.ai/a/51e47afd-72fc-402f-a90f-ffced1b71224) |
+| 🎥 **Screen Recording (sample call)** | [▶ Watch on Google Drive](https://drive.google.com/file/d/1FkqEjLVEItmkaECeFS2XY3LXX16YoF8Q/view?usp=drive_link) |
+
 This document records the observed behavior from Bolna test calls. The results are based on the transcripts provided. A test marked **FAIL** or **NEEDS REVIEW** should not be reported as passed.
 
 | Test ID | Scenario | Recording URL | Transcript URL | Result |
