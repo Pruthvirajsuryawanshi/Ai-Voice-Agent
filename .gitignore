@@ -16,3 +16,8 @@ Thumbs.db
 # Avoid accidentally committing raw customer data
 customer-data/
 private-recordings/
+
+# Editor and IDE configurations
+.vscode/
+.idea/
+*.sublime-workspace
